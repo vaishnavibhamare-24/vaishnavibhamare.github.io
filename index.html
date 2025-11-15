@@ -2,347 +2,592 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Vaishnavi Bhamare - Portfolio</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <title>Vaishnavi Bhamare | Data Analytics Portfolio</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- Font Awesome -->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Theme Base CSS -->
-    <link href="styles.css" rel="stylesheet" />
+    <!-- Font Awesome (for icons if you want later) -->
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
 
     <style>
       :root {
-        --sidebar: #2f2f2f;        /* DARK GREY SIDEBAR */
-        --accent: #5a5a5a;         /* GREY ACCENT for name */
-        --text-main: #333;
-        --text-soft: #666;
-        --badge-bg: #f5f5f5;
-        --badge-border: #e3e3e3;
+        --text-main: #111111;
+        --text-soft: #555555;
+        --border-soft: #e5e5e5;
+      }
+
+      * {
+        box-sizing: border-box;
       }
 
       body {
-        background: white !important;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        color: var(--text-main);
+        background-color: #ffffff;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      /* NAVBAR */
+
+      .navbar-brand-text {
+        font-weight: 600;
+        font-size: 1.05rem;
+        margin-left: 0.5rem;
+      }
+
+      .navbar-nav .nav-link {
+        font-size: 0.9rem;
+        text-transform: lowercase;
+        letter-spacing: 0.08em;
+        color: var(--text-soft);
+      }
+
+      .navbar-nav .nav-link.active,
+      .navbar-nav .nav-link:hover {
         color: var(--text-main);
       }
 
-      /* SIDEBAR */
-      #sideNav {
-        background-color: var(--sidebar) !important;
-      }
-      #sideNav .navbar-nav .nav-link {
-        font-size: 0.8rem;
-        letter-spacing: 0.15em;
-      }
-      #sideNav .navbar-nav .nav-link:hover {
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 999px;
-      }
-      #sideNav .img-profile {
-        border: 3px solid #fff;
+      .nav-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
         object-fit: cover;
       }
 
-      /* MAIN LAYOUT */
-      .resume-section {
-        padding: 2.2rem 0;
-      }
-      .resume-section-content {
-        max-width: 900px;
-        margin: 0 auto;
-      }
-      hr.m-0 {
-        border-color: #e5e5e5;
+      /* SECTIONS */
+
+      section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border-soft);
       }
 
-      /* NAME */
-      .name-title {
-        font-size: 2.7rem;
-        letter-spacing: 0.08em;
+      .section-title {
         text-transform: uppercase;
-        color: var(--accent);
-        margin-bottom: 0.4rem;
-      }
-
-      /* CONTACT BAR */
-      .contact-line {
-        font-size: 0.9rem;
         letter-spacing: 0.15em;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        color: var(--text-soft);
+      }
+
+      /* HERO */
+
+      .hero-title {
+        font-size: 2.6rem;
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+      }
+
+      .hero-subtitle {
         text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.95rem;
         color: var(--text-soft);
         margin-bottom: 1.4rem;
       }
-      .contact-line a {
-        color: var(--accent);
-        font-weight: 700;
-        text-decoration: none;
-      }
-      .contact-line a:hover {
-        text-decoration: underline;
+
+      .hero-text {
+        color: var(--text-soft);
+        line-height: 1.7;
+        font-size: 0.98rem;
       }
 
-      /* SECTION HEADERS */
-      h2 {
+      .hero-buttons .btn {
+        border-radius: 0;
+        padding: 0.75rem 1.8rem;
+        font-size: 0.85rem;
         text-transform: uppercase;
-        letter-spacing: 0.15em;
+        letter-spacing: 0.12em;
+      }
+
+      .btn-outline-dark {
+        border-width: 1px;
+      }
+
+      .btn-outline-dark:hover {
+        color: #ffffff;
+      }
+
+      .hero-image {
+        width: 100%;
+        max-width: 420px;
+        border-radius: 4px;
+        object-fit: cover;
+      }
+
+      /* EXPERIENCE */
+
+      .item-title {
+        font-weight: 600;
+      }
+
+      .item-subtitle {
         font-size: 0.95rem;
-        margin-bottom: 1.4rem;
+        color: var(--text-soft);
       }
 
-      /* PROJECT CARDS */
+      .item-date {
+        font-size: 0.85rem;
+        color: var(--text-soft);
+      }
+
+      .item-list {
+        margin-top: 0.5rem;
+        color: var(--text-soft);
+        font-size: 0.95rem;
+      }
+
+      /* PROJECTS */
+
       .project-card {
-        background: #fff;
-        border-radius: 10px;
-        border: 1px solid #e6e6e6;
-        padding: 1.2rem 1.3rem;
+        border: 1px solid var(--border-soft);
+        border-radius: 4px;
+        padding: 1.1rem 1.2rem;
         margin-bottom: 1rem;
-        transition: 0.2s;
       }
-      .project-card:hover {
-        border-color: var(--accent);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+
+      .project-name {
+        font-weight: 600;
+        margin-bottom: 0.2rem;
       }
+
       .project-tech {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         text-transform: uppercase;
-        letter-spacing: 0.15em;
-        color: #777;
+        letter-spacing: 0.12em;
+        color: var(--text-soft);
         margin-bottom: 0.4rem;
       }
 
+      .project-card ul {
+        padding-left: 1.1rem;
+        margin-bottom: 0;
+        color: var(--text-soft);
+        font-size: 0.95rem;
+      }
+
       /* SKILLS */
-      .skills-badges {
+
+      .skill-badges {
         display: flex;
         flex-wrap: wrap;
         gap: 0.4rem;
       }
-      .badge-skill {
-        padding: 6px 12px;
-        background: var(--badge-bg);
-        border: 1px solid var(--badge-border);
-        border-radius: 20px;
-        font-size: 0.82rem;
+
+      .skill-badge {
+        border-radius: 999px;
+        border: 1px solid var(--border-soft);
+        padding: 0.35rem 0.9rem;
+        font-size: 0.85rem;
+        background-color: #fafafa;
+      }
+
+      /* CONTACT */
+
+      .contact-link {
+        display: block;
+        color: var(--text-soft);
+        font-size: 0.95rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .contact-link span {
+        font-weight: 500;
+        color: var(--text-main);
+      }
+
+      @media (max-width: 991.98px) {
+        .hero-title {
+          font-size: 2.2rem;
+        }
+
+        section {
+          padding: 3rem 0;
+        }
       }
     </style>
   </head>
 
-  <body id="page-top">
-    <!-- SIDEBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Vaishnavi Bhamare</span>
-        <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2"
-               src="formal_pic.jpg"
-               alt="Vaishnavi Profile" />
-        </span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarResponsive">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">ABOUT</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">EXPERIENCE</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">PROJECTS</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">EDUCATION</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">SKILLS</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">INTERESTS</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">AWARDS</a></li>
-        </ul>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#top">
+          <img
+            src="formal_pic.jpg"
+            alt="Vaishnavi"
+            class="nav-avatar"
+          />
+          <span class="navbar-brand-text">vaishnavi bhamare</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#about">about</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#education">education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
-    <!-- MAIN CONTENT -->
-    <div class="container-fluid p-0">
-
-      <!-- ABOUT -->
-      <section class="resume-section" id="about">
-        <div class="resume-section-content">
-          <h1 class="name-title">VAISHNAVI GOVIND BHAMARE</h1>
-
-          <div class="contact-line">
-            Denton, TX · (940) 843-5939 ·
-            <a href="mailto:vaishnavibhamare24@gmail.com">Email</a> ·
-            <a href="https://www.linkedin.com/in/vaishnavibhamare">LinkedIn</a> ·
-            <a href="https://github.com/vaishnavibhamare">GitHub</a>
+    <!-- HERO / ABOUT -->
+    <main id="top">
+      <section id="about">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <p class="section-title mb-2">hello, i'm</p>
+              <h1 class="hero-title">VAISHNAVI GOVIND BHAMARE</h1>
+              <div class="hero-subtitle mb-3">
+                MASTER’S STUDENT IN ADVANCED DATA ANALYTICS
+              </div>
+              <p class="hero-text mb-4">
+                I love using data to solve real-world problems and turn
+                messy data into clear, actionable insights. Skilled in
+                SQL, Python, Power BI, and machine learning, I enjoy
+                building ETL pipelines, dashboards, and predictive
+                models that help stakeholders make confident decisions.
+              </p>
+              <div class="hero-buttons d-flex flex-wrap gap-2">
+                <a href="#projects" class="btn btn-outline-dark">
+                  VIEW MY WORK
+                </a>
+                <a href="#contact" class="btn btn-outline-dark">
+                  GET IN TOUCH
+                </a>
+                <!-- Update href to your resume file if you upload one -->
+                <a href="resume.pdf" class="btn btn-outline-dark">
+                  RESUME
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-6 text-center">
+              <img
+                src="formal_pic.jpg"
+                alt="Vaishnavi portrait"
+                class="hero-image shadow-sm"
+              />
+            </div>
           </div>
-
-          <p class="lead">
-            Master’s student in Advanced Data Analytics skilled in SQL, Python, Power BI, Excel,
-            and machine learning — experienced in ETL pipelines, KPI reporting, dashboards,
-            and analytical storytelling for business teams.
-          </p>
         </div>
       </section>
-      <hr class="m-0" />
+
+      <!-- EDUCATION -->
+      <section id="education">
+        <div class="container">
+          <p class="section-title">education</p>
+          <div class="mb-3">
+            <div class="item-title">
+              University of North Texas, Denton, Texas
+            </div>
+            <div class="item-subtitle">
+              Master of Science – Advanced Data Analytics · GPA 4.0/4.0
+            </div>
+            <div class="item-date">Expected Graduation: May 2026</div>
+          </div>
+          <div>
+            <div class="item-title">
+              Veermata Jijabai Technological Institute (VJTI), Mumbai
+            </div>
+            <div class="item-subtitle">
+              Bachelor of Technology – Electrical Engineering · GPA
+              3.8/4.0
+            </div>
+            <div class="item-date">Graduated: May 2024</div>
+          </div>
+        </div>
+      </section>
 
       <!-- EXPERIENCE -->
-      <section class="resume-section" id="experience">
-        <div class="resume-section-content">
-          <h2>Experience</h2>
+      <section id="experience">
+        <div class="container">
+          <p class="section-title">experience</p>
 
           <div class="mb-4">
-            <h3>Research Assistant · University of North Texas</h3>
-            <div class="text-primary">Apr 2025 – Present</div>
-            <ul>
-              <li>Developed SQL reports and BI dashboards for academic teams.</li>
-              <li>Built ETL pipelines improving reporting accuracy.</li>
-              <li>Used Git-based workflows for reproducible analytics.</li>
+            <div class="item-title">
+              Research Assistant · University of North Texas
+            </div>
+            <div class="item-date mb-1">Apr 2025 – Present · Texas, USA</div>
+            <ul class="item-list">
+              <li>
+                Developing SQL reports and BI dashboards to support
+                research and operational decisions.
+              </li>
+              <li>
+                Designing data collection and transformation pipelines
+                to improve reporting accuracy and efficiency.
+              </li>
+              <li>
+                Orchestrating Git-based analytics workflows for
+                reproducible models and experiments.
+              </li>
             </ul>
           </div>
 
           <div class="mb-4">
-            <h3>Data Analytics Intern · TATA Power</h3>
-            <div class="text-primary">Feb 2023 – Mar 2023</div>
-            <ul>
-              <li>Automated Python + SQL pipelines improving speed by 60%.</li>
-              <li>Created dashboards monitoring transformer performance.</li>
-              <li>Performed anomaly detection for engineering insights.</li>
+            <div class="item-title">
+              Data Analytics Intern · TATA Power, Dharavi Receiving Station
+            </div>
+            <div class="item-date mb-1">
+              Feb 2023 – Mar 2023 · Mumbai, India
+            </div>
+            <ul class="item-list">
+              <li>
+                Automated Python/SQL data pipelines, improving
+                processing speed by 60% and enabling near real-time
+                transformer monitoring for 50K+ devices.
+              </li>
+              <li>
+                Performed anomaly detection and trend analysis on
+                transformer performance and reliability.
+              </li>
+              <li>
+                Proposed automation-focused improvements to reduce
+                manual reporting and error risk.
+              </li>
             </ul>
           </div>
 
           <div>
-            <h3>Data Engineering Intern · VJTI</h3>
-            <div class="text-primary">Jan 2022 – Apr 2022</div>
-            <ul>
-              <li>Built ETL pipelines for 100K+ simulation data records.</li>
-              <li>Improved integration workflows for power grid modelling.</li>
-              <li>Developed analytical reports for operations & planning.</li>
+            <div class="item-title">
+              Data Engineering Intern – Energy Analytics · COE Lab, VJTI
+            </div>
+            <div class="item-date mb-1">
+              Jan 2022 – Apr 2022 · Mumbai, India
+            </div>
+            <ul class="item-list">
+              <li>
+                Implemented SQL/Python ETL pipelines to ingest and
+                transform 100K+ grid simulation records, improving data
+                readiness for modeling.
+              </li>
+              <li>
+                Enhanced integration workflows for large-scale power
+                system simulations.
+              </li>
+              <li>
+                Built analytical reports summarizing performance trends
+                across operating scenarios.
+              </li>
             </ul>
           </div>
         </div>
       </section>
-      <hr class="m-0" />
 
       <!-- PROJECTS -->
-      <section class="resume-section" id="projects">
-        <div class="resume-section-content">
-          <h2>Projects</h2>
+      <section id="projects">
+        <div class="container">
+          <p class="section-title">projects</p>
 
           <div class="project-card">
-            <h3>Car Sales Dashboard</h3>
+            <div class="project-name">Car Sales Dashboard</div>
             <div class="project-tech">Power BI · Excel</div>
             <ul>
-              <li>Analyzed 1,000+ transactions with interactive visuals.</li>
-              <li>Automated Excel → Power BI refresh pipeline.</li>
-              <li>Performed profitability analysis for dealership decisions.</li>
+              <li>
+                Built an interactive dashboard analyzing 1,000+ car
+                sales transactions by model, segment, and region.
+              </li>
+              <li>
+                Automated Excel → Power BI workflows for near
+                real-time performance tracking.
+              </li>
+              <li>
+                Performed profitability analysis to support
+                discounting and pricing decisions.
+              </li>
             </ul>
           </div>
 
           <div class="project-card">
-            <h3>YouTube Trending Pipeline</h3>
-            <div class="project-tech">SQL · Python · Streamlit</div>
+            <div class="project-name">
+              YouTube Trending Video Analytics Pipeline
+            </div>
+            <div class="project-tech">
+              SQL · Python (Pandas, SQLite) · Streamlit
+            </div>
             <ul>
-              <li>Processed 37,000+ records using an automated ETL.</li>
-              <li>Built real-time dashboard analyzing category patterns.</li>
-              <li>Optimized SQL queries improving runtime by 40%.</li>
+              <li>
+                Designed an ETL pipeline for 37,000+ semi-structured
+                YouTube records across categories and dates.
+              </li>
+              <li>
+                Integrated SQL and Python for automated extraction,
+                cleaning, and transformation.
+              </li>
+              <li>
+                Built a Streamlit dashboard monitoring spikes in
+                views, likes, and category trends, reducing manual
+                reporting time by 80%.
+              </li>
             </ul>
           </div>
 
           <div class="project-card">
-            <h3>Sonar Classification</h3>
-            <div class="project-tech">XGBoost · PCA · SHAP</div>
+            <div class="project-name">
+              Advanced Sonar Signal Classification System
+            </div>
+            <div class="project-tech">
+              Python · Scikit-learn · PCA · SHAP · XGBoost
+            </div>
             <ul>
-              <li>Achieved 95.2% accuracy classifying underwater signals.</li>
-              <li>Implemented SHAP-based model explainability.</li>
-              <li>Deployed real-time prediction app using Streamlit.</li>
+              <li>
+                Performed EDA on 2,080 sonar signals to classify
+                underwater mines vs. rocks using PCA-based
+                dimensionality reduction.
+              </li>
+              <li>
+                Evaluated multiple models and deployed XGBoost
+                (95.2% accuracy) with SHAP explainability.
+              </li>
+              <li>
+                Built a Streamlit app for low-latency inference in
+                safety-critical simulations.
+              </li>
             </ul>
           </div>
 
           <div class="project-card">
-            <h3>Diabetes Risk Prediction</h3>
-            <div class="project-tech">ML · Stratified K-Fold</div>
+            <div class="project-name">Diabetes Risk Prediction System</div>
+            <div class="project-tech">
+              Python · Scikit-learn · Stratified K-Fold
+            </div>
             <ul>
-              <li>Built models with ROC-AUC of 89%.</li>
-              <li>Identified key predictors such as glucose & BMI.</li>
-              <li>Designed bias-aware visual explainability charts.</li>
+              <li>
+                Analyzed 768 patient records and identified key
+                predictors such as glucose and BMI.
+              </li>
+              <li>
+                Built and compared Random Forest, Logistic Regression,
+                and AdaBoost, achieving ROC-AUC of 0.89.
+              </li>
+              <li>
+                Designed explainability visualizations for
+                bias-sensitive healthcare settings.
+              </li>
             </ul>
           </div>
 
           <div class="project-card">
-            <h3>Flight Pricing Forecast</h3>
-            <div class="project-tech">Python · Random Forest</div>
+            <div class="project-name">Flight Pricing Forecast</div>
+            <div class="project-tech">
+              Python · Random Forest · ANOVA
+            </div>
             <ul>
-              <li>Modeled fare prediction using 10K+ flight records.</li>
-              <li>Performed ANOVA to explain pricing factors.</li>
-              <li>Suggested actionable segmentation strategies.</li>
+              <li>
+                Cleaned and modeled 10K+ flight records to predict
+                fares.
+              </li>
+              <li>
+                Used Random Forest (R² ≈ 0.82) and two-way ANOVA to
+                explain variance across airlines, holidays, and
+                baggage rules.
+              </li>
+              <li>
+                Suggested pricing segmentation strategies based on
+                customer personas.
+              </li>
             </ul>
           </div>
         </div>
       </section>
-      <hr class="m-0" />
-
-      <!-- EDUCATION -->
-      <section class="resume-section" id="education">
-        <div class="resume-section-content">
-          <h2>Education</h2>
-
-          <h3>University of North Texas</h3>
-          <div class="text-primary">M.S. Advanced Data Analytics · GPA 4.0</div>
-
-          <br />
-
-          <h3>VJTI, Mumbai</h3>
-          <div class="text-primary">B.Tech Electrical Engineering · GPA 3.8</div>
-        </div>
-      </section>
-      <hr class="m-0" />
 
       <!-- SKILLS -->
-      <section class="resume-section" id="skills">
-        <div class="resume-section-content">
-          <h2>Skills & Tools</h2>
-
-          <div class="skills-badges">
-            <span class="badge-skill">SQL</span>
-            <span class="badge-skill">Python</span>
-            <span class="badge-skill">Pandas</span>
-            <span class="badge-skill">NumPy</span>
-            <span class="badge-skill">Power BI</span>
-            <span class="badge-skill">Tableau</span>
-            <span class="badge-skill">Looker</span>
-            <span class="badge-skill">Scikit-learn</span>
-            <span class="badge-skill">TensorFlow</span>
-            <span class="badge-skill">Data Wrangling</span>
-            <span class="badge-skill">ETL / Automation</span>
+      <section id="skills">
+        <div class="container">
+          <p class="section-title">skills</p>
+          <div class="skill-badges">
+            <span class="skill-badge">SQL</span>
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">Pandas</span>
+            <span class="skill-badge">NumPy</span>
+            <span class="skill-badge">Power BI</span>
+            <span class="skill-badge">Tableau</span>
+            <span class="skill-badge">Looker</span>
+            <span class="skill-badge">Scikit-learn</span>
+            <span class="skill-badge">TensorFlow</span>
+            <span class="skill-badge">Data Wrangling</span>
+            <span class="skill-badge">ETL / Automation</span>
           </div>
         </div>
       </section>
-      <hr class="m-0" />
 
-      <!-- INTERESTS -->
-      <section class="resume-section" id="interests">
-        <div class="resume-section-content">
-          <h2>Interests</h2>
-          <p class="text-soft">
-            Passionate about analytics, dashboards, teaching, fitness,
-            content creation, and exploring AI/ML tools.
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="container">
+          <p class="section-title">contact</p>
+          <p class="contact-link">
+            <span>Email:</span>
+            <a href="mailto:vaishnavibhamare24@gmail.com">
+              vaishnavibhamare24@gmail.com
+            </a>
+          </p>
+          <p class="contact-link">
+            <span>LinkedIn:</span>
+            <a
+              href="https://www.linkedin.com/in/vaishnavibhamare"
+              target="_blank"
+              >linkedin.com/in/vaishnavibhamare</a
+            >
+          </p>
+          <p class="contact-link">
+            <span>GitHub:</span>
+            <a
+              href="https://github.com/vaishnavibhamare"
+              target="_blank"
+              >github.com/vaishnavibhamare</a
+            >
           </p>
         </div>
       </section>
+    </main>
 
-      <!-- AWARDS -->
-      <section class="resume-section" id="awards">
-        <div class="resume-section-content">
-          <h2>Awards & Certifications</h2>
-          <ul>
-            <li>Google Data Analytics Professional Certificate</li>
-            <li>IBM Data Analytics Professional Certificate</li>
-          </ul>
-        </div>
-      </section>
-
-    </div>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
   </body>
 </html>
 
