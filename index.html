@@ -35,66 +35,156 @@
     <!-- Base Theme CSS -->
     <link href="styles.css" rel="stylesheet" />
 
-    <!-- Custom Light Theme Styling -->
+    <!-- Custom Styling -->
     <style>
+      :root {
+        --sidebar-bg: #9b3a00; /* dark orange */
+        --sidebar-bg-hover: #b14703;
+        --accent: #d35400; /* orange for name, highlights */
+        --text-main: #333333;
+        --text-soft: #666666;
+        --badge-bg: #f5f5f5;
+        --badge-border: #e3e3e3;
+      }
+
       body {
         background-color: #ffffff !important;
+        color: var(--text-main);
       }
 
-      h1 span.text-primary {
-        color: #007bff;
+      /* ==== SIDEBAR ==== */
+      #sideNav {
+        background-color: var(--sidebar-bg) !important;
       }
 
+      #sideNav .navbar-nav .nav-link {
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+      }
+
+      #sideNav .navbar-nav .nav-link:hover {
+        color: #ffffff !important;
+        background-color: rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+      }
+
+      #sideNav .navbar-brand .img-profile {
+        border: 3px solid #ffffff;
+        object-fit: cover;
+      }
+
+      /* ==== SECTION SPACING (reduce gaps) ==== */
+      .resume-section {
+        padding: 3rem 0; /* default was 5rem, now tighter */
+      }
+
+      @media (min-width: 992px) {
+        .resume-section {
+          padding: 3rem 0;
+        }
+      }
+
+      hr.m-0 {
+        border-color: #e5e5e5;
+      }
+
+      /* ==== HEADER / NAME ==== */
+      .name-title {
+        font-size: 3.1rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 0.6rem;
+      }
+
+      .resume-section-content p.lead {
+        color: var(--text-soft);
+      }
+
+      /* Contact line */
+      .contact-line {
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--text-soft);
+        margin-bottom: 1.8rem;
+      }
+
+      .contact-line a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .contact-line a:hover {
+        text-decoration: underline;
+      }
+
+      /* Section headings */
+      h2 {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .resume-section-content ul {
+        color: var(--text-soft);
+      }
+
+      .resume-section-content ul li {
+        margin-bottom: 0.25rem;
+      }
+
+      /* ==== PROJECT CARDS ==== */
       .project-card {
         background: #ffffff;
         border-radius: 10px;
         border: 1px solid #e5e5e5;
-        padding: 1.4rem 1.5rem;
-        margin-bottom: 1.6rem;
-        transition: all 0.2s ease;
+        padding: 1.35rem 1.5rem;
+        margin-bottom: 1.4rem;
+        transition: all 0.18s ease-in-out;
       }
 
-      .project-card:hover {
-        border-color: #007bff;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      .project-card h3 {
+        font-size: 1.05rem;
+        margin-bottom: 0.3rem;
       }
 
       .project-tech {
         text-transform: uppercase;
         font-size: 0.75rem;
         letter-spacing: 0.15em;
-        color: #666;
+        color: #777777;
         margin-bottom: 0.4rem;
+      }
+
+      .project-card:hover {
+        border-color: var(--accent);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      /* ==== SKILLS BADGES (alignment) ==== */
+      .skills-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
       }
 
       .badge-skill {
         border-radius: 20px;
         padding: 6px 12px;
-        background: #f5f5f5;
+        background: var(--badge-bg);
         color: #333;
-        border: 1px solid #eee;
+        border: 1px solid var(--badge-border);
         font-size: 0.85rem;
-        margin: 4px;
+        white-space: nowrap;
       }
 
-      #sideNav {
-        background-color: #007bff !important;
-      }
-
-      #sideNav .navbar-brand .img-profile {
-        border: 3px solid white;
-      }
-
-      .subheading a {
-        color: #007bff;
-      }
-
-      .subheading a:hover {
-        color: #0056b3;
-      }
-
-      hr.m-0 {
-        border-color: #e5e5e5;
+      /* Interests & awards text */
+      #interests p,
+      #awards li {
+        color: var(--text-soft);
       }
     </style>
   </head>
@@ -102,16 +192,17 @@
   <body id="page-top">
     <!-- Sidebar -->
     <nav
-      class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"
+      class="navbar navbar-expand-lg navbar-dark fixed-top"
       id="sideNav"
     >
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Vaishnavi Govind Bhamare</span>
         <span class="d-none d-lg-block">
+          <!-- Make sure formal_pic.jpg exists in the repo root -->
           <img
             class="img-fluid img-profile rounded-circle mx-auto mb-2"
             src="formal_pic.jpg"
-            alt="Profile picture"
+            alt="Profile picture of Vaishnavi Govind Bhamare"
           />
         </span>
       </a>
@@ -164,17 +255,11 @@
       <!-- ABOUT -->
       <section class="resume-section" id="about">
         <div class="resume-section-content">
-          <h1 class="mb-0">
-            Vaishnavi Govind
-            <span class="text-primary">Bhamare</span>
-          </h1>
+          <h1 class="name-title">VAISHNAVI GOVIND BHAMARE</h1>
 
-          <div class="subheading mb-4 mt-2">
+          <div class="contact-line">
             Denton, TX · (940) 843-5939 ·
-            <a href="mailto:vaishnavibhamare24@gmail.com"
-              >vaishnavibhamare24@gmail.com</a
-            >
-            ·
+            <a href="mailto:vaishnavibhamare24@gmail.com">Email</a> ·
             <a href="https://www.linkedin.com/in/vaishnavibhamare"
               >LinkedIn</a
             >
@@ -182,11 +267,11 @@
             <a href="https://github.com/vaishnavibhamare">GitHub</a>
           </div>
 
-          <p class="lead mb-5">
-            Master's student in Advanced Data Analytics with strong skills in
+          <p class="lead mb-4">
+            Master’s student in Advanced Data Analytics with strong skills in
             SQL, Python, Excel, Power BI, and machine learning. Experienced in
             data preprocessing, KPI analysis, ETL pipelines, dashboards, and
-            developing models with clean communication for business teams.
+            developing models with clear communication for business teams.
           </p>
         </div>
       </section>
@@ -196,7 +281,7 @@
       <!-- EXPERIENCE -->
       <section class="resume-section" id="experience">
         <div class="resume-section-content">
-          <h2 class="mb-5">Experience</h2>
+          <h2 class="mb-4">Experience</h2>
 
           <div class="d-flex flex-column flex-md-row justify-content-between">
             <div class="flex-grow-1">
@@ -208,7 +293,7 @@
                   and operational decision-making.
                 </li>
                 <li>
-                  Created ETL pipelines improving data accuracy and processing
+                  Designed ETL pipelines improving data accuracy and processing
                   efficiency.
                 </li>
                 <li>
@@ -270,7 +355,7 @@
       <!-- PROJECTS -->
       <section class="resume-section" id="projects">
         <div class="resume-section-content">
-          <h2 class="mb-5">Projects</h2>
+          <h2 class="mb-4">Projects</h2>
 
           <div class="row">
             <div class="col-md-6">
@@ -348,7 +433,9 @@
                 </div>
                 <ul>
                   <li>Modeled 10K+ flight records for fare prediction.</li>
-                  <li>Explained variance across airlines, seasons, and rules.</li>
+                  <li>
+                    Explained variance across airlines, seasons, and rules.
+                  </li>
                   <li>Suggested pricing segmentation strategies.</li>
                 </ul>
               </div>
@@ -362,7 +449,7 @@
       <!-- EDUCATION -->
       <section class="resume-section" id="education">
         <div class="resume-section-content">
-          <h2 class="mb-5">Education</h2>
+          <h2 class="mb-4">Education</h2>
 
           <h3>University of North Texas</h3>
           <div class="subheading">M.S. Advanced Data Analytics</div>
@@ -383,19 +470,20 @@
       <!-- SKILLS -->
       <section class="resume-section" id="skills">
         <div class="resume-section-content">
-          <h2 class="mb-5">Skills & Tools</h2>
-
-          <span class="badge-skill">SQL</span>
-          <span class="badge-skill">Python</span>
-          <span class="badge-skill">Power BI</span>
-          <span class="badge-skill">Tableau</span>
-          <span class="badge-skill">Pandas</span>
-          <span class="badge-skill">NumPy</span>
-          <span class="badge-skill">Looker</span>
-          <span class="badge-skill">Scikit-learn</span>
-          <span class="badge-skill">TensorFlow</span>
-          <span class="badge-skill">Data Wrangling</span>
-          <span class="badge-skill">ETL / Automation</span>
+          <h2 class="mb-4">Skills &amp; Tools</h2>
+          <div class="skills-badges">
+            <span class="badge-skill">SQL</span>
+            <span class="badge-skill">Python</span>
+            <span class="badge-skill">Pandas</span>
+            <span class="badge-skill">NumPy</span>
+            <span class="badge-skill">Power BI</span>
+            <span class="badge-skill">Tableau</span>
+            <span class="badge-skill">Looker</span>
+            <span class="badge-skill">Scikit-learn</span>
+            <span class="badge-skill">TensorFlow</span>
+            <span class="badge-skill">Data Wrangling</span>
+            <span class="badge-skill">ETL / Automation</span>
+          </div>
         </div>
       </section>
 
@@ -404,7 +492,7 @@
       <!-- INTERESTS -->
       <section class="resume-section" id="interests">
         <div class="resume-section-content">
-          <h2 class="mb-5">Interests</h2>
+          <h2 class="mb-4">Interests</h2>
           <p>
             Passionate about analytics, dashboards, teaching, fitness, content,
             and exploring AI/ML tools. I enjoy building data apps and sharing my
@@ -418,7 +506,7 @@
       <!-- AWARDS -->
       <section class="resume-section" id="awards">
         <div class="resume-section-content">
-          <h2 class="mb-5">Awards & Certifications</h2>
+          <h2 class="mb-4">Awards &amp; Certifications</h2>
           <ul>
             <li>Google Data Analytics Professional Certificate</li>
             <li>IBM Data Analytics Professional Certificate</li>
@@ -432,5 +520,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-
 
