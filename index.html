@@ -35,21 +35,20 @@
     <!-- Base theme CSS (your existing styles.css in root) -->
     <link href="styles.css" rel="stylesheet" />
 
-    <!-- 🔥 Neon Dark Mode Overrides -->
+    <!-- Matte Black Minimal Overrides -->
     <style>
       :root {
-        --bg-main: #050510;
-        --bg-card: #111122;
-        --bg-card-soft: #111827;
-        --text-main: #e5e7eb;
-        --text-soft: #9ca3af;
-        --accent: #22d3ee; /* cyan */
-        --accent-2: #a855f7; /* purple */
-        --border-soft: rgba(148, 163, 184, 0.4);
+        --bg-main: #000000;
+        --bg-panel: #0d0d0d;
+        --bg-card: #141414;
+        --text-main: #f5f5f5;
+        --text-soft: #b3b3b3;
+        --accent: #00bcd4; /* teal */
+        --border-soft: #2b2b2b;
       }
 
       body {
-        background: radial-gradient(circle at top, #111827 0, #020617 40%, #000 100%);
+        background-color: var(--bg-main);
         color: var(--text-main);
       }
 
@@ -61,22 +60,20 @@
         color: var(--text-main);
       }
 
-      /* Sidebar neon look */
+      /* Sidebar */
       #sideNav {
-        background: linear-gradient(180deg, #020617 0%, #0b1120 40%, #111827 100%) !important;
-        box-shadow: 0 0 25px rgba(34, 211, 238, 0.35);
-        border-right: 1px solid rgba(148, 163, 184, 0.3);
+        background-color: #050505 !important;
+        border-right: 1px solid var(--border-soft);
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.7);
       }
 
       #sideNav .navbar-brand .img-profile {
-        border: 4px solid var(--accent);
-        box-shadow: 0 0 18px rgba(34, 211, 238, 0.6),
-          0 0 35px rgba(168, 85, 247, 0.3);
+        border: 3px solid var(--accent);
       }
 
       #sideNav .navbar-nav .nav-link {
         text-transform: uppercase;
-        letter-spacing: 0.15em;
+        letter-spacing: 0.16em;
         font-size: 0.7rem;
       }
 
@@ -84,23 +81,34 @@
         color: var(--accent) !important;
       }
 
-      /* Name + role */
+      /* Headings */
       h1 {
-        font-size: 3.3rem;
+        font-size: 3.1rem;
         text-transform: uppercase;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.06em;
       }
 
       h1 span.text-primary {
         color: var(--accent) !important;
       }
 
-      .role-title {
+      h2 {
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
         font-size: 1rem;
+        color: var(--accent);
+      }
+
+      .role-title {
+        font-size: 0.95rem;
         text-transform: uppercase;
         letter-spacing: 0.25em;
-        color: var(--accent-2);
+        color: var(--text-soft);
         margin-top: 0.3rem;
+      }
+
+      .subheading {
+        color: var(--text-main);
       }
 
       .subheading a {
@@ -108,7 +116,7 @@
       }
 
       .subheading a:hover {
-        color: var(--accent-2);
+        color: #ffffff;
       }
 
       .lead {
@@ -116,23 +124,23 @@
       }
 
       .social-icons .social-icon {
-        background: transparent;
-        border: 1px solid rgba(148, 163, 184, 0.6);
+        background-color: #101010;
+        border-radius: 999px;
+        border: 1px solid var(--border-soft);
         color: var(--text-main);
       }
 
       .social-icons .social-icon:hover {
-        background: radial-gradient(circle, var(--accent) 0, transparent 60%);
+        background-color: #1f1f1f;
         color: var(--accent);
-        box-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
       }
 
-      /* Section headings */
-      h2 {
-        text-transform: uppercase;
-        letter-spacing: 0.25em;
-        font-size: 1.1rem;
-        color: var(--accent);
+      hr.m-0 {
+        border-color: #1f1f1f;
+      }
+
+      .text-primary {
+        color: var(--accent) !important;
       }
 
       .resume-section-content ul {
@@ -145,24 +153,17 @@
 
       /* Project cards */
       .project-card {
-        border-radius: 0.9rem;
+        border-radius: 0.75rem;
         border: 1px solid var(--border-soft);
-        padding: 1.3rem 1.4rem;
+        padding: 1.25rem 1.4rem;
         margin-bottom: 1.6rem;
-        background: radial-gradient(
-          circle at top left,
-          rgba(34, 211, 238, 0.12),
-          rgba(15, 23, 42, 0.95)
-        );
-        box-shadow: 0 0 25px rgba(15, 23, 42, 0.9);
-        transition: transform 0.2s ease, box-shadow 0.2s ease,
-          border-color 0.2s ease;
+        background-color: var(--bg-card);
       }
 
       .project-card h3 {
         font-size: 1.05rem;
-        margin-bottom: 0.35rem;
-        color: #e5e7eb;
+        margin-bottom: 0.4rem;
+        color: var(--text-main);
       }
 
       .project-tech {
@@ -174,50 +175,33 @@
       }
 
       .project-card:hover {
-        transform: translateY(-3px);
         border-color: var(--accent);
-        box-shadow: 0 0 35px rgba(34, 211, 238, 0.35),
-          0 0 40px rgba(168, 85, 247, 0.25);
-      }
-
-      /* Experience / education layout tweaks */
-      .subheading {
-        color: var(--text-main);
-      }
-
-      .text-primary {
-        color: var(--accent) !important;
       }
 
       /* Skills badges */
       .badge-skill {
-        margin: 0.18rem 0.18rem;
-        font-size: 0.8rem;
+        margin: 0.2rem 0.25rem 0.2rem 0;
+        font-size: 0.78rem;
         border-radius: 999px;
-        border: 1px solid rgba(148, 163, 184, 0.7);
-        background: rgba(15, 23, 42, 0.9);
+        padding: 0.25rem 0.7rem;
+        background-color: #121212;
+        border: 1px solid var(--border-soft);
         color: var(--text-main);
       }
 
       .badge-skill:hover {
         border-color: var(--accent);
-        box-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
       }
 
-      /* Interests / awards text */
       #interests p,
       #awards li {
         color: var(--text-soft);
-      }
-
-      hr.m-0 {
-        border-color: rgba(31, 41, 55, 0.7);
       }
     </style>
   </head>
 
   <body id="page-top">
-    <!-- Neon Sidebar Navigation -->
+    <!-- Sidebar Navigation -->
     <nav
       class="navbar navbar-expand-lg navbar-dark fixed-top"
       id="sideNav"
@@ -225,11 +209,11 @@
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <span class="d-block d-lg-none">Vaishnavi Govind Bhamare</span>
 
-        <!-- Your profile picture: formal_pic.jpg in root -->
+        <!-- Your profile picture: formal_pic.jpg -->
         <span class="d-none d-lg-block">
           <img
             class="img-fluid img-profile rounded-circle mx-auto mb-2"
-            src=""C:\Users\Vaishnavi\Downloads\formal_pic.jpg""
+            src="formal_pic.jpg"
             alt="Profile picture of Vaishnavi Govind Bhamare"
           />
         </span>
@@ -450,7 +434,7 @@
                     pricing decisions.
                   </li>
                   <li>
-                    Automated Excel → Power BI pipeline to reduce manual
+                    Automated Excel → Power BI workflow to reduce manual
                     reporting effort.
                   </li>
                 </ul>
@@ -471,12 +455,11 @@
                   </li>
                   <li>
                     Integrated SQL and Python for automated extraction and
-                    transformation across multiple categories.
+                    transformation across categories and time.
                   </li>
                   <li>
                     Built a Streamlit dashboard to monitor spikes in views,
-                    likes, and category trends, cutting manual reporting time by
-                    80%.
+                    likes, and trends, reducing manual reporting time by 80%.
                   </li>
                 </ul>
               </div>
@@ -605,17 +588,17 @@
           <h2 class="mb-5">Skills &amp; Tools</h2>
 
           <div class="mb-3">
-            <span class="badge badge-skill">SQL</span>
-            <span class="badge badge-skill">Python</span>
-            <span class="badge badge-skill">Pandas</span>
-            <span class="badge badge-skill">Power BI</span>
-            <span class="badge badge-skill">Tableau</span>
-            <span class="badge badge-skill">Seaborn</span>
-            <span class="badge badge-skill">Matplotlib</span>
-            <span class="badge badge-skill">Looker</span>
-            <span class="badge badge-skill">XGBoost</span>
-            <span class="badge badge-skill">TensorFlow</span>
-            <span class="badge badge-skill">Scikit-learn</span>
+            <span class="badge-skill">SQL</span>
+            <span class="badge-skill">Python</span>
+            <span class="badge-skill">Pandas</span>
+            <span class="badge-skill">Power BI</span>
+            <span class="badge-skill">Tableau</span>
+            <span class="badge-skill">Seaborn</span>
+            <span class="badge-skill">Matplotlib</span>
+            <span class="badge-skill">Looker</span>
+            <span class="badge-skill">Scikit-learn</span>
+            <span class="badge-skill">XGBoost</span>
+            <span class="badge-skill">TensorFlow</span>
           </div>
         </div>
       </section>
@@ -628,7 +611,7 @@
           <p>
             Outside of analytics, I enjoy teaching, mentoring, and collaborating
             on projects that combine data, technology, and real-world impact. I
-           ’m also interested in fitness, productivity systems, and continuous
+            am also interested in fitness, productivity systems, and continuous
             learning in AI/ML and cloud technologies.
           </p>
           <p class="mb-0">
