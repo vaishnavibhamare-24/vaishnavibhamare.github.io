@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1"
     />
-    <title>Vaishnavi Bhamare | Web Portfolio</title>
+    <title>Vaishnavi Bhamare | Data Analytics Portfolio</title>
 
     <!-- Google Font -->
     <link
@@ -20,7 +20,7 @@
       rel="stylesheet"
     />
 
-    <!-- Font Awesome (for icons if you want later) -->
+    <!-- Font Awesome (optional) -->
     <script
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
       crossorigin="anonymous"
@@ -48,24 +48,17 @@
         text-decoration: none;
       }
 
-      /* NAVBAR */
+      /* ========== NAVBAR ========== */
+
+      .navbar {
+        background-color: #222222 !important; /* dark grey bar */
+      }
 
       .navbar-brand-text {
         font-weight: 600;
         font-size: 1.05rem;
         margin-left: 0.5rem;
-      }
-
-      .navbar-nav .nav-link {
-        font-size: 0.9rem;
-        text-transform: lowercase;
-        letter-spacing: 0.08em;
-        color: var(--text-soft);
-      }
-
-      .navbar-nav .nav-link.active,
-      .navbar-nav .nav-link:hover {
-        color: var(--text-main);
+        color: #ffffff;
       }
 
       .nav-avatar {
@@ -75,7 +68,21 @@
         object-fit: cover;
       }
 
-      /* SECTIONS */
+      .navbar-nav .nav-link {
+        font-size: 0.9rem;
+        text-transform: lowercase;
+        letter-spacing: 0.08em;
+        color: #f5f5f5;   /* white text */
+        font-weight: 400; /* normal by default */
+      }
+
+      .navbar-nav .nav-link.active,
+      .navbar-nav .nav-link:hover {
+        color: #ffffff;
+        font-weight: 600; /* bold on hover/active */
+      }
+
+      /* ========== SECTIONS ========== */
 
       section {
         padding: 4rem 0;
@@ -90,12 +97,13 @@
         color: var(--text-soft);
       }
 
-      /* HERO */
+      /* ========== HERO ========== */
 
       .hero-title {
-        font-size: 2.6rem;
+        font-size: 2.2rem;      /* smaller than before */
         font-weight: 600;
         margin-bottom: 0.6rem;
+        white-space: nowrap;    /* keep name on one line */
       }
 
       .hero-subtitle {
@@ -135,7 +143,7 @@
         object-fit: cover;
       }
 
-      /* EXPERIENCE */
+      /* ========== EXPERIENCE / EDUCATION ========== */
 
       .item-title {
         font-weight: 600;
@@ -157,7 +165,7 @@
         font-size: 0.95rem;
       }
 
-      /* PROJECTS */
+      /* ========== PROJECTS ========== */
 
       .project-card {
         border: 1px solid var(--border-soft);
@@ -186,7 +194,7 @@
         font-size: 0.95rem;
       }
 
-      /* SKILLS */
+      /* ========== SKILLS ========== */
 
       .skill-badges {
         display: flex;
@@ -202,7 +210,7 @@
         background-color: #fafafa;
       }
 
-      /* CONTACT */
+      /* ========== CONTACT ========== */
 
       .contact-link {
         display: block;
@@ -218,7 +226,8 @@
 
       @media (max-width: 991.98px) {
         .hero-title {
-          font-size: 2.2rem;
+          font-size: 2rem;
+          white-space: normal; /* allow wrap on small screens */
         }
 
         section {
@@ -230,18 +239,18 @@
 
   <body>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#top">
           <img
-            src=""C:\Users\Vaishnavi\Downloads\formal_pic.jpg""
+            src="formal_pic.jpg"
             alt="Vaishnavi"
             class="nav-avatar"
           />
           <span class="navbar-brand-text">vaishnavi bhamare</span>
         </a>
         <button
-          class="navbar-toggler"
+          class="navbar-toggler text-white"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navMenu"
@@ -279,17 +288,17 @@
         <div class="container">
           <div class="row align-items-center g-5">
             <div class="col-lg-6">
-              <p class="section-title mb-2">Hello, I'm</p>
+              <p class="section-title mb-2">hello, i'm</p>
               <h1 class="hero-title">VAISHNAVI BHAMARE</h1>
               <div class="hero-subtitle mb-3">
                 MASTER’S STUDENT IN ADVANCED DATA ANALYTICS
               </div>
               <p class="hero-text mb-4">
-                I love using data to solve real-world problems and turn
-                messy data into clear, actionable insights. Skilled in
-                SQL, Python, Power BI, and Machine Learning, and Artificial Intelligence, I enjoy
-                building ETL pipelines, dashboards, and predictive
-                models that help stakeholders make confident decisions.
+                I love using data to solve real-world problems and turn messy
+                data into clear, actionable insights. Skilled in SQL, Python,
+                Power BI, Machine Learning, and Artificial Intelligence, I enjoy
+                building ETL pipelines, dashboards, and predictive models that
+                help stakeholders make confident decisions.
               </p>
               <div class="hero-buttons d-flex flex-wrap gap-2">
                 <a href="#projects" class="btn btn-outline-dark">
@@ -299,8 +308,8 @@
                   GET IN TOUCH
                 </a>
                 <!-- Update href to your resume file if you upload one -->
-                <!-- <a href="resume.pdf" class="btn btn-outline-dark">
-                  RESUME -->
+                <a href="resume.pdf" class="btn btn-outline-dark">
+                  RESUME
                 </a>
               </div>
             </div>
@@ -308,7 +317,7 @@
               <img
                 src="formal_pic.jpg"
                 alt="Vaishnavi portrait"
-                class="hero-image shadow-sm"
+                class="hero-image"
               />
             </div>
           </div>
@@ -333,8 +342,7 @@
               Veermata Jijabai Technological Institute (VJTI), Mumbai
             </div>
             <div class="item-subtitle">
-              Bachelor of Technology – Electrical Engineering · GPA
-              3.8/4.0
+              Bachelor of Technology – Electrical Engineering · GPA 3.8/4.0
             </div>
             <div class="item-date">Graduated: May 2024</div>
           </div>
@@ -353,16 +361,16 @@
             <div class="item-date mb-1">Apr 2025 – Present · Texas, USA</div>
             <ul class="item-list">
               <li>
-               1. Developing SQL reports and BI dashboards to support
-                research and operational decisions.
+                Developing SQL reports and BI dashboards to support research and
+                operational decisions.
               </li>
               <li>
-               2. Designing data collection and transformation pipelines
-                to improve reporting accuracy and efficiency.
+                Designing data collection and transformation pipelines to
+                improve reporting accuracy and efficiency.
               </li>
               <li>
-               3. Orchestrating Git-based analytics workflows for
-                reproducible models and experiments.
+                Orchestrating Git-based analytics workflows for reproducible
+                models and experiments.
               </li>
             </ul>
           </div>
@@ -376,17 +384,17 @@
             </div>
             <ul class="item-list">
               <li>
-               1. Automated Python/SQL data pipelines, improving
-                processing speed by 60% and enabling near real-time
-                transformer monitoring for 50K+ devices.
+                Automated Python/SQL data pipelines, improving processing speed
+                by 60% and enabling near real-time transformer monitoring for
+                50K+ devices.
               </li>
               <li>
-               2. Performed anomaly detection and trend analysis on
-                transformer performance and reliability.
+                Performed anomaly detection and trend analysis on transformer
+                performance and reliability.
               </li>
               <li>
-               3. Proposed automation-focused improvements to reduce
-                manual reporting and error risk.
+                Proposed automation-focused improvements to reduce manual
+                reporting and error risk.
               </li>
             </ul>
           </div>
@@ -400,17 +408,17 @@
             </div>
             <ul class="item-list">
               <li>
-               1. Implemented SQL/Python ETL pipelines to ingest and
-                transform 100K+ grid simulation records, improving data
-                readiness for modeling.
+                Implemented SQL/Python ETL pipelines to ingest and transform
+                100K+ grid simulation records, improving data readiness for
+                modeling.
               </li>
               <li>
-               2. Enhanced integration workflows for large-scale power
-                system simulations.
+                Enhanced integration workflows for large-scale power system
+                simulations.
               </li>
               <li>
-               3. Built analytical reports summarizing performance trends
-                across operating scenarios.
+                Built analytical reports summarizing performance trends across
+                operating scenarios.
               </li>
             </ul>
           </div>
@@ -427,16 +435,16 @@
             <div class="project-tech">Power BI · Excel</div>
             <ul>
               <li>
-               1. Built an interactive dashboard analyzing 1,000+ car
-                sales transactions by model, segment, and region.
+                Built an interactive dashboard analyzing 1,000+ car sales
+                transactions by model, segment, and region.
               </li>
               <li>
-               2. Automated Excel → Power BI workflows for near
-                real-time performance tracking.
+                Automated Excel → Power BI workflows for near real-time
+                performance tracking.
               </li>
               <li>
-               3. Performed profitability analysis to support
-                discounting and pricing decisions.
+                Performed profitability analysis to support discounting and
+                pricing decisions.
               </li>
             </ul>
           </div>
@@ -450,17 +458,16 @@
             </div>
             <ul>
               <li>
-               1. Designed an ETL pipeline for 37,000+ semi-structured
-                YouTube records across categories and dates.
+                Designed an ETL pipeline for 37,000+ semi-structured YouTube
+                records across categories and dates.
               </li>
               <li>
-               2. Integrated SQL and Python for automated extraction,
-                cleaning, and transformation.
+                Integrated SQL and Python for automated extraction, cleaning,
+                and transformation.
               </li>
               <li>
-               3. Built a Streamlit dashboard monitoring spikes in
-                views, likes, and category trends, reducing manual
-                reporting time by 80%.
+                Built a Streamlit dashboard monitoring spikes in views, likes,
+                and category trends, reducing manual reporting time by 80%.
               </li>
             </ul>
           </div>
@@ -474,16 +481,15 @@
             </div>
             <ul>
               <li>
-               1. Performed EDA on 2,080 sonar signals to classify
-                underwater mines vs. rocks using PCA-based
-                dimensionality reduction.
+                Performed EDA on 2,080 sonar signals to classify underwater
+                mines vs. rocks using PCA-based dimensionality reduction.
               </li>
               <li>
-               2. Evaluated multiple models and deployed XGBoost
-                (95.2% accuracy) with SHAP explainability.
+                Evaluated multiple models and deployed XGBoost (95.2% accuracy)
+                with SHAP explainability.
               </li>
               <li>
-               3. Built a Streamlit app for low-latency inference in
+                Built a Streamlit app for low-latency inference in
                 safety-critical simulations.
               </li>
             </ul>
@@ -496,16 +502,16 @@
             </div>
             <ul>
               <li>
-               1. Analyzed 768 patient records and identified key
-                predictors such as glucose and BMI.
+                Analyzed 768 patient records and identified key predictors such
+                as glucose and BMI.
               </li>
               <li>
-               2. Built and compared Random Forest, Logistic Regression,
-                and AdaBoost, achieving ROC-AUC of 0.89.
+                Built and compared Random Forest, Logistic Regression, and
+                AdaBoost, achieving ROC-AUC of 0.89.
               </li>
               <li>
-               3. Designed explainability visualizations for
-                bias-sensitive healthcare settings.
+                Designed explainability visualizations for bias-sensitive
+                healthcare settings.
               </li>
             </ul>
           </div>
@@ -517,17 +523,15 @@
             </div>
             <ul>
               <li>
-               1. Cleaned and modeled 10K+ flight records to predict
-                fares.
+                Cleaned and modeled 10K+ flight records to predict fares.
               </li>
               <li>
-               2. Used Random Forest (R² ≈ 0.82) and two-way ANOVA to
-                explain variance across airlines, holidays, and
-                baggage rules.
+                Used Random Forest (R² ≈ 0.82) and two-way ANOVA to explain
+                variance across airlines, holidays, and baggage rules.
               </li>
               <li>
-               3. Suggested pricing segmentation strategies based on
-                customer personas.
+                Suggested pricing segmentation strategies based on customer
+                personas.
               </li>
             </ul>
           </div>
