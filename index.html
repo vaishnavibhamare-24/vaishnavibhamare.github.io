@@ -300,7 +300,7 @@
         text-decoration: underline;
       }
 
-      /* ========== SKILL CARDS (3-column) ========== */
+      /* ========== SKILL / CERT / INTEREST CARDS ========== */
 
       .skill-card {
         border: 1px solid var(--border-soft);
@@ -602,7 +602,7 @@
         </div>
       </section>
 
-      <!-- PROJECTS (your existing cards kept) -->
+      <!-- PROJECTS -->
       <section id="projects">
         <div class="container">
           <p class="section-title">projects</p>
@@ -932,10 +932,12 @@
         </div>
       </section>
 
-      <!-- SKILLS (3 big cards like screenshot) -->
+      <!-- SKILLS / CERTIFICATIONS / INTERESTS -->
       <section id="skills">
         <div class="container section-reveal">
           <p class="section-title">skills</p>
+
+          <!-- Skill cards row -->
           <div class="row g-4">
             <!-- Card 1 -->
             <div class="col-md-4">
@@ -989,6 +991,44 @@
                   <span class="skill-chip">GCP</span>
                   <span class="skill-chip">AWS</span>
                   <span class="skill-chip">VS Code</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications & Interests row -->
+          <div class="row g-4 mt-3">
+            <!-- Certifications -->
+            <div class="col-md-6">
+              <div class="skill-card">
+                <div class="skill-card-title">Certifications</div>
+                <div class="skill-chip-grid">
+                  <span class="skill-chip">
+                    Google Data Analytics Professional Certificate
+                  </span>
+                  <span class="skill-chip">
+                    IBM Data Analytics Professional Certificate
+                  </span>
+                  <span class="skill-chip">
+                    Microsoft Power BI Certificate
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interests (FAANG-style) -->
+            <div class="col-md-6">
+              <div class="skill-card">
+                <div class="skill-card-title">Interests</div>
+                <div class="skill-chip-grid">
+                  <span class="skill-chip">Large-Scale Experimentation</span>
+                  <span class="skill-chip">Product & Growth Analytics</span>
+                  <span class="skill-chip">Recommendation Systems</span>
+                  <span class="skill-chip">Search & Ranking</span>
+                  <span class="skill-chip">LLM-powered Assistants</span>
+                  <span class="skill-chip">Causal Inference</span>
+                  <span class="skill-chip">Data Platform Design</span>
+                  <span class="skill-chip">Real-time Dashboards</span>
                 </div>
               </div>
             </div>
@@ -1053,5 +1093,6 @@
     </script>
   </body>
 </html>
+
 
 
