@@ -293,11 +293,15 @@
       .project-link {
         font-size: 0.85rem;
         font-weight: 500;
-        color: #111111;
+        color: #666666; /* light grey for VIEW MY WORK */
       }
 
       .project-link span {
         text-decoration: underline;
+      }
+
+      .project-link:hover {
+        color: #111111;
       }
 
       /* ========== SKILL / CERT / INTEREST CARDS ========== */
@@ -342,6 +346,54 @@
       .skill-chip:hover {
         background-color: #111111;
         color: #ffffff;
+      }
+
+      /* ========== ARTICLE CARD ========== */
+
+      .article-card {
+        border: 1px solid var(--border-soft);
+        border-radius: 8px;
+        padding: 1.5rem;
+        background-color: #ffffff;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+        transition: all 0.18s ease-out;
+      }
+
+      .article-card:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        transform: translateY(-2px);
+        border-color: #111111;
+      }
+
+      .article-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+      }
+
+      .article-desc {
+        font-size: 0.96rem;
+        color: var(--text-soft);
+        line-height: 1.7;
+        margin-bottom: 1rem;
+      }
+
+      .article-meta {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--text-soft);
+      }
+
+      .article-read a {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #666666;
+      }
+
+      .article-read a:hover {
+        color: #111111;
+        text-decoration: underline;
       }
 
       /* ========== CONTACT ========== */
@@ -932,7 +984,7 @@
         </div>
       </section>
 
-      <!-- SKILLS / CERTIFICATIONS / INTERESTS -->
+      <!-- SKILLS / CERTIFICATIONS / INTERESTS / ARTICLES -->
       <section id="skills">
         <div class="container section-reveal">
           <p class="section-title">skills</p>
@@ -963,7 +1015,9 @@
             <!-- Card 2 -->
             <div class="col-md-4">
               <div class="skill-card">
-                <div class="skill-card-title">Data Engineering & Analytics </div>
+                <div class="skill-card-title">
+                  Data Engineering & Analytics
+                </div>
                 <div class="skill-chip-grid">
                   <span class="skill-chip">ETL Pipelines</span>
                   <span class="skill-chip">Data Wrangling</span>
@@ -975,9 +1029,6 @@
                   <span class="skill-chip">Hypothesis Testing</span>
                   <span class="skill-chip">SHAP</span>
                   <span class="skill-chip">Time Series</span>
-            
-
-
                 </div>
               </div>
             </div>
@@ -1021,7 +1072,7 @@
               </div>
             </div>
 
-            <!-- Interests (FAANG-style) -->
+            <!-- Interests -->
             <div class="col-md-6">
               <div class="skill-card">
                 <div class="skill-card-title">Interests</div>
@@ -1034,6 +1085,35 @@
                   <span class="skill-chip">Causal Inference</span>
                   <span class="skill-chip">Data Platform Design</span>
                   <span class="skill-chip">Real-time Dashboards</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Articles card -->
+          <div class="row g-4 mt-3">
+            <div class="col-12">
+              <div class="article-card section-reveal">
+                <div class="article-title">
+                  ARE WE THERE YET? THE RACE TO BUILD ARTIFICIAL GENERAL
+                  INTELLIGENCE
+                </div>
+                <div class="article-desc">
+                  Exploring the current state of AGI development and the
+                  challenges we face in creating truly intelligent machines that
+                  can match human cognitive abilities.
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="article-meta">MEDIUM ARTICLE</div>
+                  <div class="article-read">
+                    <a
+                      href="https://medium.com/@vaishnavibhamare24"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      READ MORE →
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1067,7 +1147,7 @@
               >github.com/vaishnavibhamare</a
             >
           </p>
-           <p class="contact-link">
+          <p class="contact-link">
             <span>Handshake:</span>
             <a
               href="https://app.joinhandshake.com/profiles/vaishnavibhamare"
