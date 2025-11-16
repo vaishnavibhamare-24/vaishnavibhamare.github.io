@@ -186,15 +186,23 @@
         transform: translateY(0);
       }
 
-      /* ========== EDUCATION (clean, no bullets) ========== */
+      /* ========== EDUCATION CARDS ========== */
 
-      .education-timeline {
-        padding-left: 0;
-        border-left: none;
+      .education-card {
+        border: 1px solid var(--border-soft);
+        border-radius: 8px;
+        padding: 1.2rem 1.4rem;
+        margin-bottom: 1.2rem;
+        background-color: #ffffff;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+        transition: all 0.18s ease-out;
+        height: 100%;
       }
 
-      .education-item {
-        margin-bottom: 1.6rem;
+      .education-card:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        transform: translateY(-2px);
+        border-color: #111111;
       }
 
       .item-title {
@@ -226,6 +234,7 @@
       .experience-card:hover {
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
         transform: translateY(-2px);
+        border-color: #111111; /* same black border as project cards */
       }
 
       .experience-card .item-title {
@@ -291,28 +300,48 @@
         text-decoration: underline;
       }
 
-      /* ========== SKILLS ========== */
+      /* ========== SKILL CARDS (3-column) ========== */
 
-      .skill-badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4rem;
-      }
-
-      .skill-badge {
-        border-radius: 999px;
+      .skill-card {
         border: 1px solid var(--border-soft);
-        padding: 0.35rem 0.9rem;
-        font-size: 0.85rem;
-        background-color: #fafafa;
+        border-radius: 8px;
+        padding: 1.5rem;
+        background-color: #ffffff;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+        height: 100%;
         transition: all 0.18s ease-out;
       }
 
-      .skill-badge:hover {
+      .skill-card:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        transform: translateY(-2px);
+        border-color: #111111;
+      }
+
+      .skill-card-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .skill-chip-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+
+      .skill-chip {
+        border: 1px solid #111111;
+        border-radius: 4px;
+        padding: 0.35rem 0.9rem;
+        font-size: 0.85rem;
+        background-color: #ffffff;
+        transition: all 0.18s ease-out;
+      }
+
+      .skill-chip:hover {
         background-color: #111111;
         color: #ffffff;
-        border-color: #111111;
-        font-weight: 600;
       }
 
       /* ========== CONTACT ========== */
@@ -439,28 +468,32 @@
         </div>
       </section>
 
-      <!-- EDUCATION -->
+      <!-- EDUCATION (2 cards) -->
       <section id="education">
-        <div class="container section-reveal">
+        <div class="container">
           <p class="section-title">education</p>
-          <div class="education-timeline">
-            <div class="education-item">
-              <div class="item-title">
-                University of North Texas, Denton, Texas
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="education-card section-reveal">
+                <div class="item-title">
+                  University of North Texas, Denton, Texas
+                </div>
+                <div class="item-subtitle">
+                  Master of Science – Advanced Data Analytics · GPA 4.0/4.0
+                </div>
+                <div class="item-date">Expected Graduation: May 2026</div>
               </div>
-              <div class="item-subtitle">
-                Master of Science – Advanced Data Analytics · GPA 4.0/4.0
-              </div>
-              <div class="item-date">Expected Graduation: May 2026</div>
             </div>
-            <div class="education-item">
-              <div class="item-title">
-                Veermata Jijabai Technological Institute (VJTI), Mumbai
+            <div class="col-md-6">
+              <div class="education-card section-reveal">
+                <div class="item-title">
+                  Veermata Jijabai Technological Institute (VJTI), Mumbai
+                </div>
+                <div class="item-subtitle">
+                  Bachelor of Technology – Electrical Engineering · GPA 3.2/4.0
+                </div>
+                <div class="item-date">Graduated: May 2024</div>
               </div>
-              <div class="item-subtitle">
-                Bachelor of Technology – Electrical Engineering · GPA 3.2/4.0
-              </div>
-              <div class="item-date">Graduated: May 2024</div>
             </div>
           </div>
         </div>
@@ -569,31 +602,38 @@
         </div>
       </section>
 
-      <!-- PROJECTS -->
+      <!-- PROJECTS (your existing cards kept) -->
       <section id="projects">
         <div class="container">
           <p class="section-title">projects</p>
 
-
-           <!-- YouTube Trending Video Analytics Pipeline -->
+          <!-- YouTube Trending Video Analytics Pipeline -->
           <div class="project-card section-reveal">
             <div class="project-name">
-             YouTube Trending Video Analytics Pipeline
+              YouTube Trending Video Analytics Pipeline
             </div>
-            <div class="project-tech">SQL · Python(Pandas, SQLite) · Streamlit · Matplotlib</div>
+            <div class="project-tech">
+              SQL · Python (Pandas, SQLite) · Streamlit · Matplotlib
+            </div>
             <ul>
               <li>
-                Engineered a robust ETL pipeline to ingest, clean, and process 37,000+ semi-structured video records from YouTube trending datasets. 
+                Engineered a robust ETL pipeline to ingest, clean, and process
+                37,000+ semi-structured video records from YouTube trending
+                datasets.
               </li>
               <li>
-                Integrated SQL with Python scripts to automate data extraction and transformation across multiple categories and time periods. 
+                Integrated SQL with Python scripts to automate data extraction
+                and transformation across multiple categories and time periods.
               </li>
               <li>
-              Developed a real-time analytics dashboard using Streamlit to monitor spikes in views, likes, and category trends, reducing manual 
-reporting time by 80%. 
+                Developed a real-time analytics dashboard using Streamlit to
+                monitor spikes in views, likes, and category trends, reducing
+                manual reporting time by 80%.
               </li>
-               <li>
-               Optimized SQL queries with indexed tables and efficient joins, improving performance by 40%. 
+              <li>
+                Optimized SQL queries with indexed tables and efficient joins,
+                improving performance by ~40%.
+              </li>
             </ul>
             <a
               href="https://github.com/vaishnavibhamare-24/Youtube-Trending-Video-Pipeline"
@@ -604,26 +644,28 @@ reporting time by 80%.
             </a>
           </div>
 
-
-           <!-- Flight Pricing Forecast -->
+          <!-- Flight Pricing Forecast -->
           <div class="project-card section-reveal">
             <div class="project-name">
-             Flight Pricing Forecast
+              Flight Pricing Forecast
             </div>
-            <div class="project-tech">Python · Random Forest · ANOVA · Seaborn</div>
+            <div class="project-tech">
+              Python · Random Forest · ANOVA · Seaborn
+            </div>
             <ul>
               <li>
-               Cleaned and prepared 10K+ airline pricing records to build a regression pipeline for fare prediction.  
+                Cleaned and prepared 10K+ airline pricing records to build a
+                regression pipeline for fare prediction.
               </li>
               <li>
-                Applied Random Forest Regressor (R² = 0.82) and ANOVA to explain pricing variance across airlines, holidays, and baggage rules.
+                Applied Random Forest Regressor (R² ≈ 0.82) and ANOVA to explain
+                pricing variance across airlines, holidays, and baggage rules.
               </li>
               <li>
-              Suggested 3 pricing segmentation strategies based on customer personas—translatable to cost optimization in cloud computing or 
-hospital resource allocation. 
+                Suggested pricing segmentation strategies based on customer
+                personas, transferable to domains like cloud or hospital
+                resource allocation.
               </li>
-               <!-- <li>
-               Optimized SQL queries with indexed tables and efficient joins, improving performance by 40%.  -->
             </ul>
             <a
               href="https://github.com/vaishnavibhamare-24/flight-price-forecast"
@@ -634,22 +676,25 @@ hospital resource allocation.
             </a>
           </div>
 
-
-            <!-- Car Selling Price Prediction  -->
+          <!-- Car Selling Price Prediction -->
           <div class="project-card section-reveal">
             <div class="project-name">
-              Car Selling Price Prediction 
+              Car Selling Price Prediction
             </div>
-            <div class="project-tech">Power BI · Excel</div>
+            <div class="project-tech">Python · Scikit-learn</div>
             <ul>
               <li>
-                Built a scalable preprocessing pipeline (missing value imputation, one-hot encoding, feature scaling) for 6K+ car listings.
+                Built a scalable preprocessing pipeline (missing value
+                imputation, one-hot encoding, feature scaling) for 6K+ car
+                listings.
               </li>
               <li>
-                Trained Random Forest Regressor (MAE = 1.5 lakhs) with optimized hyperparameters using GridSearchCV. 
+                Trained Random Forest Regressor with optimized
+                hyperparameters using GridSearchCV.
               </li>
               <li>
-                Visualized top predictive feature (age, km driven, fuel type), simulating real-world telemetry insights for IoT systems.
+                Visualized top predictive features (age, km driven, fuel type),
+                simulating telemetry insights for IoT systems.
               </li>
             </ul>
             <a
@@ -657,16 +702,9 @@ hospital resource allocation.
               target="_blank"
               class="project-link"
             >
-              <span>VIEW MY WORK HERE→</span>
+              <span>VIEW MY WORK HERE →</span>
             </a>
           </div>
-
-
-
-          
-
-
-
 
           <!-- Car Sales Dashboard -->
           <div class="project-card section-reveal">
@@ -693,36 +731,41 @@ hospital resource allocation.
               target="_blank"
               class="project-link"
             >
-              <span>VIEW MY WORK HERE→</span>
+              <span>VIEW MY WORK HERE →</span>
             </a>
           </div>
 
-          
-           <!-- Retail Sales Forecasting -->
+          <!-- Retail Sales Forecasting -->
           <div class="project-card section-reveal">
             <div class="project-name">
-             Retail Sales Forecasting
+              Retail Sales Forecasting
             </div>
-            <div class="project-tech">Python · Scikitlearn</div>
+            <div class="project-tech">Python · Scikit-learn</div>
             <ul>
               <li>
-                Built an end-to-end ML pipeline using 120K+ retail transactions to predict daily sales.
+                Built an end-to-end ML pipeline using 120K+ retail transactions
+                to predict daily sales.
               </li>
               <li>
-               Performed data cleaning, missing value imputation, outlier checks, and created 10+ EDA visualizations.
+                Performed cleaning, missing value imputation, outlier checks,
+                and created multiple EDA visualizations.
               </li>
               <li>
-                 Engineered competitive pricing gaps, inventory indicators, and profitability features.
+                Engineered pricing gaps, inventory indicators, and profitability
+                features.
               </li>
               <li>
-                 Developed and compared Linear Regression, Random Forest, and Gradient Boosting models; Random Forest achieved R² = 0.998 after removing leakage.
+                Developed and compared Linear Regression, Random Forest, and
+                Gradient Boosting models; Random Forest achieved R² ≈ 0.998
+                after fixing data leakage.
               </li>
               <li>
-                Generated business insights showing that units ordered and price were the strongest revenue drivers.
+                Showed that units ordered and price were the strongest revenue
+                drivers.
               </li>
             </ul>
             <a
-              href="https://github.com/vaishnavibhamare-24/Car-Sales-Dashboard-PowerBI"
+              href="https://github.com/vaishnavibhamare-24/retail-sales-forecast"
               target="_blank"
               class="project-link"
             >
@@ -730,34 +773,32 @@ hospital resource allocation.
             </a>
           </div>
 
-
-          <!-- 
-ATS Resume Keyword Analyzer -->
+          <!-- ATS Resume Keyword Analyzer -->
           <div class="project-card section-reveal">
             <div class="project-name">
-             
               ATS Resume Keyword Analyzer
             </div>
             <div class="project-tech">Python · Streamlit</div>
             <ul>
               <li>
-                 Built an interactive Streamlit web app to evaluate resume–JD alignment using keyword matching and scoring.
+                Built an interactive Streamlit web app to evaluate resume–JD
+                alignment using keyword scoring.
               </li>
               <li>
-                 Implemented regex-based parsing and a curated keyword map across ML, BI, Analytics, and Cloud categories.
+                Implemented regex-based parsing and a curated keyword map across
+                ML, BI, Analytics, and Cloud categories.
               </li>
               <li>
-                Generated automated improvement suggestions to help users tailor resumes for ATS systems.
+                Generated automated improvement suggestions to help users tailor
+                resumes for ATS systems.
               </li>
-               <li>
-                Designed an intuitive UI with dynamic match scores, progress bars, and CSV downloads for results.
-              </li>
-               <li>
-                Strengthened expertise in Python scripting, text analytics, and UI development for career automation tools.
+              <li>
+                Designed a clean UI with dynamic match scores, progress bars,
+                and CSV downloads.
               </li>
             </ul>
             <a
-              href="https://github.com/vaishnavibhamare-24/Car-Sales-Dashboard-PowerBI"
+              href="https://github.com/vaishnavibhamare-24/ats-resume-keyword-analyzer"
               target="_blank"
               class="project-link"
             >
@@ -765,9 +806,7 @@ ATS Resume Keyword Analyzer -->
             </a>
           </div>
 
-
-
-          <!-- Blinkit Sales Analysis – Power BI Dashboard -->
+          <!-- Blinkit Sales Analysis -->
           <div class="project-card section-reveal">
             <div class="project-name">
               Blinkit Sales Analysis – Power BI Dashboard
@@ -775,16 +814,20 @@ ATS Resume Keyword Analyzer -->
             <div class="project-tech">Power BI · Excel</div>
             <ul>
               <li>
-                Built an interactive Power BI dashboard analyzing 8.5 K Blinkit grocery items across 1.5 K outlets.
+                Built a Power BI dashboard analyzing 8.5K Blinkit grocery items
+                across 1.5K outlets.
               </li>
               <li>
-                Created DAX-based KPIs (Total Sales ₹1.2 M, Avg Sales 140.9, Avg Rating 3.9) for data-driven insights.
+                Created DAX-based KPIs (Total Sales, Avg Sales, Avg Rating) for
+                data-driven insights.
               </li>
               <li>
-               Visualized sales by outlet type, size, and fat content using dynamic filters and trend charts.
+                Visualized sales by outlet type, size, and fat content with
+                dynamic filters and trend charts.
               </li>
-               <li>
-               Revealed that Tier 3 outlets & low-fat products generate the highest overall revenue.
+              <li>
+                Found that Tier 3 outlets & low-fat products generated the
+                highest revenue.
               </li>
             </ul>
             <a
@@ -796,24 +839,26 @@ ATS Resume Keyword Analyzer -->
             </a>
           </div>
 
-          
-
-  <!-- Advanced Sonar Signal Classification System -->
+          <!-- Advanced Sonar Signal Classification -->
           <div class="project-card section-reveal">
             <div class="project-name">
               Advanced Sonar Signal Classification System
             </div>
-            <div class="project-tech">Python  ·Scikit-learn  · PCA · SHAP · XGBoost · Streamlit</div>
+            <div class="project-tech">
+              Python · Scikit-learn · PCA · SHAP · XGBoost · Streamlit
+            </div>
             <ul>
               <li>
-                Processed exploratory data analysis on 2,080 sonar signal instances to detect underwater mines vs rocks using dimensionality reduction 
-(PCA). Evaluated 5+ classifiers and deployed XGBoost (95.2% accuracy) with SHAP-based explainability for model transparency. 
+                Performed EDA on 2,080 sonar signal instances and used PCA for
+                dimensionality reduction to detect underwater mines vs. rocks.
               </li>
               <li>
-               Streamlined deployment using Streamlit for real-time inference, supporting low-latency responses <300ms in safety-criticalsimulations. 
+                Evaluated 5+ classifiers and deployed XGBoost (≈95% accuracy)
+                with SHAP explainability.
               </li>
               <li>
-                Simulated real-time alerting system analogous to fault-detection mechanisms in sensor-driven pipelines. 
+                Deployed via Streamlit for real-time inference with &lt;300ms
+                latency in simulations.
               </li>
             </ul>
             <a
@@ -821,33 +866,28 @@ ATS Resume Keyword Analyzer -->
               target="_blank"
               class="project-link"
             >
-              <span>VIEW MY WORK HERE→</span>
+              <span>VIEW MY WORK HERE →</span>
             </a>
           </div>
-          
 
-
-
-          <!-- 
-Super Store Sales - Power BI Dashboard -->
+          <!-- Super Store Sales -->
           <div class="project-card section-reveal">
             <div class="project-name">
-              
-             Super Store Sales - Power BI Dashboard
+              Super Store Sales – Power BI Dashboard
             </div>
             <div class="project-tech">Power BI · Excel</div>
             <ul>
               <li>
-                Built an interactive Power BI dashboard analyzing 10 K+ Super Store transactions to track sales, profit, and quantity across U.S. regions.
+                Built a Power BI dashboard analyzing 10K+ Super Store
+                transactions across U.S. regions.
               </li>
               <li>
-                Created DAX KPIs and visuals for segment, category, and payment trends—delivering real-time business insights.
+                Created DAX KPIs and visuals for segment, category, and payment
+                trends.
               </li>
               <li>
-               Discovered that Consumer segment (48%) and Office Supplies (0.64 M) dominate total sales, with peaks in Nov–Dec.
-              </li>
-               <li>
-               Strengthened expertise in Power BI, DAX, data visualization, and retail analytics for decision-making.
+                Found that Consumer segment and Office Supplies dominate total
+                sales, with peaks in Nov–Dec.
               </li>
             </ul>
             <a
@@ -858,13 +898,6 @@ Super Store Sales - Power BI Dashboard -->
               <span>VIEW MY WORK HERE →</span>
             </a>
           </div>
-
-
-
-          
-          
-
-          
 
           <!-- Diabetes Project -->
           <div class="project-card section-reveal">
@@ -893,28 +926,72 @@ Super Store Sales - Power BI Dashboard -->
               target="_blank"
               class="project-link"
             >
-              <span>View my work here →</span>
+              <span>VIEW MY WORK HERE →</span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- SKILLS -->
+      <!-- SKILLS (3 big cards like screenshot) -->
       <section id="skills">
         <div class="container section-reveal">
           <p class="section-title">skills</p>
-          <div class="skill-badges">
-            <span class="skill-badge">SQL</span>
-            <span class="skill-badge">Python</span>
-            <span class="skill-badge">Pandas</span>
-            <span class="skill-badge">NumPy</span>
-            <span class="skill-badge">Power BI</span>
-            <span class="skill-badge">Tableau</span>
-            <span class="skill-badge">Looker</span>
-            <span class="skill-badge">Scikit-learn</span>
-            <span class="skill-badge">TensorFlow</span>
-            <span class="skill-badge">Data Wrangling</span>
-            <span class="skill-badge">ETL / Automation</span>
+          <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+              <div class="skill-card">
+                <div class="skill-card-title">Programming & Databases</div>
+                <div class="skill-chip-grid">
+                  <span class="skill-chip">Python</span>
+                  <span class="skill-chip">R</span>
+                  <span class="skill-chip">SQL</span>
+                  <span class="skill-chip">MySQL</span>
+                  <span class="skill-chip">PostgreSQL</span>
+                  <span class="skill-chip">MongoDB</span>
+                  <span class="skill-chip">TensorFlow</span>
+                  <span class="skill-chip">PyTorch</span>
+                  <span class="skill-chip">NumPy</span>
+                  <span class="skill-chip">Pandas</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4">
+              <div class="skill-card">
+                <div class="skill-card-title">Data Engineering & Analytics</div>
+                <div class="skill-chip-grid">
+                  <span class="skill-chip">ETL Pipelines</span>
+                  <span class="skill-chip">Data Wrangling</span>
+                  <span class="skill-chip">Random Forest</span>
+                  <span class="skill-chip">XGBoost</span>
+                  <span class="skill-chip">Logistic Regression</span>
+                  <span class="skill-chip">Gradient Boosting</span>
+                  <span class="skill-chip">A/B Testing</span>
+                  <span class="skill-chip">Hypothesis Testing</span>
+                  <span class="skill-chip">SHAP</span>
+                  <span class="skill-chip">Time Series</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4">
+              <div class="skill-card">
+                <div class="skill-card-title">BI, Cloud & Tools</div>
+                <div class="skill-chip-grid">
+                  <span class="skill-chip">Power BI</span>
+                  <span class="skill-chip">Tableau</span>
+                  <span class="skill-chip">Looker</span>
+                  <span class="skill-chip">Excel (Advanced)</span>
+                  <span class="skill-chip">Streamlit</span>
+                  <span class="skill-chip">Git & GitHub</span>
+                  <span class="skill-chip">GCP</span>
+                  <span class="skill-chip">AWS</span>
+                  <span class="skill-chip">VS Code</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -976,4 +1053,5 @@ Super Store Sales - Power BI Dashboard -->
     </script>
   </body>
 </html>
+
 
