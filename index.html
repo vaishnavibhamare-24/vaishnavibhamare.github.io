@@ -74,7 +74,6 @@
         letter-spacing: 0.08em;
         color: #f5f5f5; /* white text */
         font-weight: 400; /* normal by default */
-        transition: all 0.2s ease-out;
       }
 
       .navbar-nav .nav-link.active,
@@ -131,18 +130,10 @@
 
       .btn-outline-dark {
         border-width: 1px;
-        border-color: #111111;
-        color: #111111;
-        background-color: transparent;
-        transition: all 0.2s ease-out;
       }
 
       .btn-outline-dark:hover {
-        background-color: #111111 !important;
-        color: #ffffff !important;
-        border-color: #111111 !important;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-        transform: translateY(-2px);
+        color: #ffffff;
       }
 
       .hero-image {
@@ -195,7 +186,24 @@
         transform: translateY(0);
       }
 
-      /* ========== TEXT HELPERS ========== */
+      /* ========== EDUCATION CARDS ========== */
+
+      .education-card {
+        border: 1px solid var(--border-soft);
+        border-radius: 8px;
+        padding: 1.2rem 1.4rem;
+        margin-bottom: 1.2rem;
+        background-color: #ffffff;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+        transition: all 0.18s ease-out;
+        height: 100%;
+      }
+
+      .education-card:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        transform: translateY(-2px);
+        border-color: #111111;
+      }
 
       .item-title {
         font-weight: 600;
@@ -211,6 +219,32 @@
         color: var(--text-soft);
       }
 
+      /* ========== EXPERIENCE CARDS ========== */
+
+      .experience-card {
+        border: 1px solid var(--border-soft);
+        border-radius: 8px;
+        padding: 1.2rem 1.4rem;
+        margin-bottom: 1.2rem;
+        background-color: #ffffff;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+        transition: all 0.18s ease-out;
+      }
+
+      .experience-card:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        transform: translateY(-2px);
+        border-color: #111111; /* same black border as project cards */
+      }
+
+      .experience-card .item-title {
+        margin-bottom: 0.2rem;
+      }
+
+      .experience-card .item-date {
+        margin-bottom: 0.45rem;
+      }
+
       .item-list {
         margin-top: 0.1rem;
         color: var(--text-soft);
@@ -218,51 +252,23 @@
         padding-left: 1.1rem;
       }
 
-      /* ========== CARD COMPONENTS (Education, Experience, Projects, etc.) ========== */
+      /* ========== PROJECT CARDS ========== */
 
-      .education-card,
-      .experience-card,
-      .project-card,
-      .cert-card,
-      .interest-card {
+      .project-card {
         border: 1px solid var(--border-soft);
         border-radius: 8px;
         padding: 1.2rem 1.4rem;
         margin-bottom: 1.2rem;
         background-color: #ffffff;
+        transition: all 0.18s ease-out;
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
-        transition: all 0.2s ease-out;
       }
 
-      .education-card:hover,
-      .experience-card:hover,
-      .project-card:hover,
-      .cert-card:hover,
-      .interest-card:hover {
-        background-color: #111111;
-        color: #ffffff;
+      .project-card:hover {
         border-color: #111111;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
         transform: translateY(-3px);
       }
-
-      .education-card:hover .item-subtitle,
-      .education-card:hover .item-date,
-      .experience-card:hover .item-date,
-      .project-card:hover .project-tech,
-      .cert-card:hover .item-date {
-        color: #f5f5f5;
-      }
-
-      .education-card:hover a,
-      .experience-card:hover a,
-      .project-card:hover a,
-      .cert-card:hover a,
-      .interest-card:hover a {
-        color: #f5f5f5;
-      }
-
-      /* ========== PROJECTS ========== */
 
       .project-name {
         font-weight: 600;
@@ -285,53 +291,57 @@
       }
 
       .project-link {
-        display: inline-block;
         font-size: 0.85rem;
         font-weight: 500;
-        color: #9a9a9a; /* light grey */
-        padding: 0.15rem 0.4rem;
-        border-radius: 4px;
-        transition: all 0.2s ease-out;
+        color: #111111;
       }
 
       .project-link span {
         text-decoration: underline;
       }
 
-      .project-link:hover {
-        color: #ffffff;
-        background-color: #111111;
+      /* ========== SKILL / CERT / INTEREST CARDS ========== */
+
+      .skill-card {
+        border: 1px solid var(--border-soft);
+        border-radius: 8px;
+        padding: 1.5rem;
+        background-color: #ffffff;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+        height: 100%;
+        transition: all 0.18s ease-out;
       }
 
-      /* ========== SKILLS SECTION (3 CARDS) ========== */
+      .skill-card:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        transform: translateY(-2px);
+        border-color: #111111;
+      }
 
-      .skills-card-title {
+      .skill-card-title {
+        font-size: 1.1rem;
         font-weight: 600;
-        margin-bottom: 0.75rem;
+        margin-bottom: 1rem;
       }
 
-      .skill-badges {
+      .skill-chip-grid {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.5rem;
+        gap: 0.6rem;
       }
 
-      .skill-badge {
-        border-radius: 6px;
-        border: 1px solid var(--border-soft);
+      .skill-chip {
+        border: 1px solid #111111;
+        border-radius: 4px;
         padding: 0.35rem 0.9rem;
         font-size: 0.85rem;
-        background-color: #fafafa;
-        color: var(--text-main);
-        transition: all 0.2s ease-out;
+        background-color: #ffffff;
+        transition: all 0.18s ease-out;
       }
 
-      .skill-badge:hover {
+      .skill-chip:hover {
         background-color: #111111;
         color: #ffffff;
-        border-color: #111111;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-        transform: translateY(-2px);
       }
 
       /* ========== CONTACT ========== */
@@ -407,12 +417,6 @@
               <a class="nav-link" href="#skills">skills</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#certifications">certifications</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#interests">interests</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="#contact">contact</a>
             </li>
           </ul>
@@ -464,13 +468,13 @@
         </div>
       </section>
 
-      <!-- EDUCATION -->
+      <!-- EDUCATION (2 cards) -->
       <section id="education">
-        <div class="container section-reveal">
+        <div class="container">
           <p class="section-title">education</p>
           <div class="row g-3">
-            <div class="col-lg-6">
-              <div class="education-card">
+            <div class="col-md-6">
+              <div class="education-card section-reveal">
                 <div class="item-title">
                   University of North Texas, Denton, Texas
                 </div>
@@ -480,8 +484,8 @@
                 <div class="item-date">Expected Graduation: May 2026</div>
               </div>
             </div>
-            <div class="col-lg-6">
-              <div class="education-card">
+            <div class="col-md-6">
+              <div class="education-card section-reveal">
                 <div class="item-title">
                   Veermata Jijabai Technological Institute (VJTI), Mumbai
                 </div>
@@ -628,7 +632,7 @@
               </li>
               <li>
                 Optimized SQL queries with indexed tables and efficient joins,
-                improving performance by 40%.
+                improving performance by ~40%.
               </li>
             </ul>
             <a
@@ -645,20 +649,22 @@
             <div class="project-name">
               Flight Pricing Forecast
             </div>
-            <div class="project-tech">Python · Random Forest · ANOVA · Seaborn</div>
+            <div class="project-tech">
+              Python · Random Forest · ANOVA · Seaborn
+            </div>
             <ul>
               <li>
                 Cleaned and prepared 10K+ airline pricing records to build a
                 regression pipeline for fare prediction.
               </li>
               <li>
-                Applied Random Forest Regressor (R² = 0.82) and ANOVA to explain
+                Applied Random Forest Regressor (R² ≈ 0.82) and ANOVA to explain
                 pricing variance across airlines, holidays, and baggage rules.
               </li>
               <li>
-                Suggested 3 pricing segmentation strategies based on customer
-                personas—translatable to cost optimization in cloud computing or
-                hospital resource allocation.
+                Suggested pricing segmentation strategies based on customer
+                personas, transferable to domains like cloud or hospital
+                resource allocation.
               </li>
             </ul>
             <a
@@ -675,7 +681,7 @@
             <div class="project-name">
               Car Selling Price Prediction
             </div>
-            <div class="project-tech">Python · Random Forest · Scikit-learn</div>
+            <div class="project-tech">Python · Scikit-learn</div>
             <ul>
               <li>
                 Built a scalable preprocessing pipeline (missing value
@@ -683,12 +689,12 @@
                 listings.
               </li>
               <li>
-                Trained Random Forest Regressor (MAE ≈ 1.5 lakhs) with
-                optimized hyperparameters using GridSearchCV.
+                Trained Random Forest Regressor with optimized
+                hyperparameters using GridSearchCV.
               </li>
               <li>
                 Visualized top predictive features (age, km driven, fuel type),
-                simulating real-world telemetry insights for IoT systems.
+                simulating telemetry insights for IoT systems.
               </li>
             </ul>
             <a
@@ -741,25 +747,25 @@
                 to predict daily sales.
               </li>
               <li>
-                Performed data cleaning, missing value imputation, outlier
-                checks, and created 10+ EDA visualizations.
+                Performed cleaning, missing value imputation, outlier checks,
+                and created multiple EDA visualizations.
               </li>
               <li>
-                Engineered competitive pricing gaps, inventory indicators, and
-                profitability features.
+                Engineered pricing gaps, inventory indicators, and profitability
+                features.
               </li>
               <li>
                 Developed and compared Linear Regression, Random Forest, and
-                Gradient Boosting models; Random Forest achieved R² = 0.998
-                after removing leakage.
+                Gradient Boosting models; Random Forest achieved R² ≈ 0.998
+                after fixing data leakage.
               </li>
               <li>
-                Generated business insights showing that units ordered and price
-                were the strongest revenue drivers.
+                Showed that units ordered and price were the strongest revenue
+                drivers.
               </li>
             </ul>
             <a
-              href="https://github.com/vaishnavibhamare-24/Car-Sales-Dashboard-PowerBI"
+              href="https://github.com/vaishnavibhamare-24/retail-sales-forecast"
               target="_blank"
               class="project-link"
             >
@@ -775,8 +781,8 @@
             <div class="project-tech">Python · Streamlit</div>
             <ul>
               <li>
-                Built an interactive Streamlit web app to evaluate
-                resume–JD alignment using keyword matching and scoring.
+                Built an interactive Streamlit web app to evaluate resume–JD
+                alignment using keyword scoring.
               </li>
               <li>
                 Implemented regex-based parsing and a curated keyword map across
@@ -787,16 +793,12 @@
                 resumes for ATS systems.
               </li>
               <li>
-                Designed an intuitive UI with dynamic match scores, progress
-                bars, and CSV downloads for results.
-              </li>
-              <li>
-                Strengthened expertise in Python scripting, text analytics, and
-                UI development for career automation tools.
+                Designed a clean UI with dynamic match scores, progress bars,
+                and CSV downloads.
               </li>
             </ul>
             <a
-              href="https://github.com/vaishnavibhamare-24/Car-Sales-Dashboard-PowerBI"
+              href="https://github.com/vaishnavibhamare-24/ats-resume-keyword-analyzer"
               target="_blank"
               class="project-link"
             >
@@ -804,7 +806,7 @@
             </a>
           </div>
 
-          <!-- Blinkit Sales Analysis – Power BI Dashboard -->
+          <!-- Blinkit Sales Analysis -->
           <div class="project-card section-reveal">
             <div class="project-name">
               Blinkit Sales Analysis – Power BI Dashboard
@@ -812,20 +814,20 @@
             <div class="project-tech">Power BI · Excel</div>
             <ul>
               <li>
-                Built an interactive Power BI dashboard analyzing 8.5K Blinkit
-                grocery items across 1.5K outlets.
+                Built a Power BI dashboard analyzing 8.5K Blinkit grocery items
+                across 1.5K outlets.
               </li>
               <li>
-                Created DAX-based KPIs (Total Sales ₹1.2M, Avg Sales 140.9, Avg
-                Rating 3.9) for data-driven insights.
+                Created DAX-based KPIs (Total Sales, Avg Sales, Avg Rating) for
+                data-driven insights.
               </li>
               <li>
-                Visualized sales by outlet type, size, and fat content using
+                Visualized sales by outlet type, size, and fat content with
                 dynamic filters and trend charts.
               </li>
               <li>
-                Revealed that Tier 3 outlets & low-fat products generate the
-                highest overall revenue.
+                Found that Tier 3 outlets & low-fat products generated the
+                highest revenue.
               </li>
             </ul>
             <a
@@ -837,7 +839,7 @@
             </a>
           </div>
 
-          <!-- Advanced Sonar Signal Classification System -->
+          <!-- Advanced Sonar Signal Classification -->
           <div class="project-card section-reveal">
             <div class="project-name">
               Advanced Sonar Signal Classification System
@@ -847,22 +849,16 @@
             </div>
             <ul>
               <li>
-                Processed exploratory data analysis on 2,080 sonar signal
-                instances to detect underwater mines vs rocks using
-                PCA-based dimensionality reduction.
+                Performed EDA on 2,080 sonar signal instances and used PCA for
+                dimensionality reduction to detect underwater mines vs. rocks.
               </li>
               <li>
-                Evaluated 5+ classifiers and deployed XGBoost (95.2% accuracy)
-                with SHAP-based explainability for model transparency.
+                Evaluated 5+ classifiers and deployed XGBoost (≈95% accuracy)
+                with SHAP explainability.
               </li>
               <li>
-                Streamlined deployment using Streamlit for real-time inference,
-                supporting low-latency responses (&lt; 300ms) in safety-critical
-                simulations.
-              </li>
-              <li>
-                Simulated an alerting system analogous to fault-detection
-                mechanisms in sensor-driven industrial pipelines.
+                Deployed via Streamlit for real-time inference with &lt;300ms
+                latency in simulations.
               </li>
             </ul>
             <a
@@ -874,7 +870,7 @@
             </a>
           </div>
 
-          <!-- Super Store Sales - Power BI Dashboard -->
+          <!-- Super Store Sales -->
           <div class="project-card section-reveal">
             <div class="project-name">
               Super Store Sales – Power BI Dashboard
@@ -882,21 +878,16 @@
             <div class="project-tech">Power BI · Excel</div>
             <ul>
               <li>
-                Built an interactive Power BI dashboard analyzing 10K+ Super
-                Store transactions to track sales, profit, and quantity across
-                U.S. regions.
+                Built a Power BI dashboard analyzing 10K+ Super Store
+                transactions across U.S. regions.
               </li>
               <li>
                 Created DAX KPIs and visuals for segment, category, and payment
-                trends—delivering real-time business insights.
+                trends.
               </li>
               <li>
-                Discovered that Consumer segment (48%) and Office Supplies
-                (₹0.64M) dominate total sales, with peaks in Nov–Dec.
-              </li>
-              <li>
-                Strengthened expertise in Power BI, DAX, data visualization, and
-                retail analytics for decision-making.
+                Found that Consumer segment and Office Supplies dominate total
+                sales, with peaks in Nov–Dec.
               </li>
             </ul>
             <a
@@ -908,7 +899,7 @@
             </a>
           </div>
 
-          <!-- Diabetes Risk Prediction System -->
+          <!-- Diabetes Project -->
           <div class="project-card section-reveal">
             <div class="project-name">
               Diabetes Risk Prediction System
@@ -941,107 +932,106 @@
         </div>
       </section>
 
-      <!-- SKILLS (3 big cards like screenshot) -->
+      <!-- SKILLS / CERTIFICATIONS / INTERESTS -->
       <section id="skills">
         <div class="container section-reveal">
           <p class="section-title">skills</p>
-          <div class="row g-3">
-            <!-- Programming & Databases -->
-            <div class="col-lg-4">
-              <div class="education-card">
-                <div class="skills-card-title">Programming & Databases</div>
-                <div class="skill-badges">
-                  <span class="skill-badge">Python</span>
-                  <span class="skill-badge">SQL</span>
-                  <span class="skill-badge">R</span>
-                  <span class="skill-badge">MySQL</span>
-                  <span class="skill-badge">PostgreSQL</span>
-                  <span class="skill-badge">MongoDB</span>
-                  <span class="skill-badge">Pandas</span>
-                  <span class="skill-badge">NumPy</span>
+
+          <!-- Skill cards row -->
+          <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+              <div class="skill-card">
+                <div class="skill-card-title">Programming & Databases</div>
+                <div class="skill-chip-grid">
+                  <span class="skill-chip">Python</span>
+                  <span class="skill-chip">R</span>
+                  <span class="skill-chip">SQL</span>
+                  <span class="skill-chip">MySQL</span>
+                  <span class="skill-chip">PostgreSQL</span>
+                  <span class="skill-chip">MongoDB</span>
+                  <span class="skill-chip">TensorFlow</span>
+                  <span class="skill-chip">PyTorch</span>
+                  <span class="skill-chip">NumPy</span>
+                  <span class="skill-chip">Pandas</span>
                 </div>
               </div>
             </div>
 
-            <!-- Data Engineering & Analytics -->
-            <div class="col-lg-4">
-              <div class="education-card">
-                <div class="skills-card-title">Data Engineering & Analytics</div>
-                <div class="skill-badges">
-                  <span class="skill-badge">ETL Pipelines</span>
-                  <span class="skill-badge">Data Wrangling</span>
-                  <span class="skill-badge">Power BI</span>
-                  <span class="skill-badge">Tableau</span>
-                  <span class="skill-badge">Looker</span>
-                  <span class="skill-badge">Scikit-learn</span>
-                  <span class="skill-badge">XGBoost</span>
-                  <span class="skill-badge">TensorFlow</span>
+            <!-- Card 2 -->
+            <div class="col-md-4">
+              <div class="skill-card">
+                <div class="skill-card-title">Data Engineering & Analytics</div>
+                <div class="skill-chip-grid">
+                  <span class="skill-chip">ETL Pipelines</span>
+                  <span class="skill-chip">Data Wrangling</span>
+                  <span class="skill-chip">Random Forest</span>
+                  <span class="skill-chip">XGBoost</span>
+                  <span class="skill-chip">Logistic Regression</span>
+                  <span class="skill-chip">Gradient Boosting</span>
+                  <span class="skill-chip">A/B Testing</span>
+                  <span class="skill-chip">Hypothesis Testing</span>
+                  <span class="skill-chip">SHAP</span>
+                  <span class="skill-chip">Time Series</span>
                 </div>
               </div>
             </div>
 
-            <!-- Cloud, ML & Deployment -->
-            <div class="col-lg-4">
-              <div class="education-card">
-                <div class="skills-card-title">
-                  Cloud, ML & Deployment
-                </div>
-                <div class="skill-badges">
-                  <span class="skill-badge">Git & Version Control</span>
-                  <span class="skill-badge">Streamlit</span>
-                  <span class="skill-badge">ML Pipelines</span>
-                  <span class="skill-badge">A/B Testing</span>
-                  <span class="skill-badge">Experiment Design</span>
-                  <span class="skill-badge">Dashboarding</span>
-                  <span class="skill-badge">Stakeholder Storytelling</span>
+            <!-- Card 3 -->
+            <div class="col-md-4">
+              <div class="skill-card">
+                <div class="skill-card-title">BI, Cloud & Tools</div>
+                <div class="skill-chip-grid">
+                  <span class="skill-chip">Power BI</span>
+                  <span class="skill-chip">Tableau</span>
+                  <span class="skill-chip">Looker</span>
+                  <span class="skill-chip">Excel (Advanced)</span>
+                  <span class="skill-chip">Streamlit</span>
+                  <span class="skill-chip">Git & GitHub</span>
+                  <span class="skill-chip">GCP</span>
+                  <span class="skill-chip">AWS</span>
+                  <span class="skill-chip">VS Code</span>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- CERTIFICATIONS -->
-      <section id="certifications">
-        <div class="container section-reveal">
-          <p class="section-title">certifications</p>
-          <div class="cert-card">
-            <div class="item-title mb-2">Selected Certifications</div>
-            <ul class="item-list">
-              <li>Google Data Analytics Professional Certificate</li>
-              <li>IBM Data Analytics Professional Certificate</li>
-              <li>Microsoft Power BI Certificate</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- INTERESTS -->
-      <section id="interests">
-        <div class="container section-reveal">
-          <p class="section-title">interests</p>
-          <div class="interest-card">
-            <div class="item-title mb-2">
-              What I'm excited about
+          <!-- Certifications & Interests row -->
+          <div class="row g-4 mt-3">
+            <!-- Certifications -->
+            <div class="col-md-6">
+              <div class="skill-card">
+                <div class="skill-card-title">Certifications</div>
+                <div class="skill-chip-grid">
+                  <span class="skill-chip">
+                    Google Data Analytics Professional Certificate
+                  </span>
+                  <span class="skill-chip">
+                    IBM Data Analytics Professional Certificate
+                  </span>
+                  <span class="skill-chip">
+                    Microsoft Power BI Certificate
+                  </span>
+                </div>
+              </div>
             </div>
-            <p class="hero-text mb-2">
-              I’m deeply interested in building data products that scale —
-              recommendation systems, experimentation platforms, and analytics
-              tools that help teams make fast, high-quality decisions.
-            </p>
-            <p class="hero-text mb-2">
-              I enjoy working at the intersection of data, product, and
-              engineering: designing clean datasets, instrumenting events,
-              defining KPIs, and translating messy real-world questions into
-              clear analyses and experiments.
-            </p>
-            <p class="hero-text mb-0">
-              Long term, I’d love to contribute to a team at a company like
-              Google, Amazon, Apple, Meta, or Netflix where I can combine
-              strong analytical thinking, good engineering practices, and
-              storytelling to ship impactful data-driven features used by
-              millions of people.
-            </p>
+
+            <!-- Interests (FAANG-style) -->
+            <div class="col-md-6">
+              <div class="skill-card">
+                <div class="skill-card-title">Interests</div>
+                <div class="skill-chip-grid">
+                  <span class="skill-chip">Large-Scale Experimentation</span>
+                  <span class="skill-chip">Product & Growth Analytics</span>
+                  <span class="skill-chip">Recommendation Systems</span>
+                  <span class="skill-chip">Search & Ranking</span>
+                  <span class="skill-chip">LLM-powered Assistants</span>
+                  <span class="skill-chip">Causal Inference</span>
+                  <span class="skill-chip">Data Platform Design</span>
+                  <span class="skill-chip">Real-time Dashboards</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1103,7 +1093,3 @@
     </script>
   </body>
 </html>
-
-
-
-
