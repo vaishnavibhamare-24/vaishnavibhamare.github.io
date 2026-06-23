@@ -1,1195 +1,746 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
-    <title>Vaishnavi Bhamare | Web Portfolio</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaishnavi Bhamare | AI & Data Engineering Portfolio</title>
 
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #5f6368;
+      --border: #e8eaed;
+      --card: #ffffff;
+      --dark: #1f1f1f;
+      --accent: #111111;
+      --soft: #f7f7f7;
+    }
 
-    <!-- Font Awesome (optional) -->
-    <script
-      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
-      crossorigin="anonymous"
-    ></script>
+    * {
+      box-sizing: border-box;
+    }
 
-    <style>
-      :root {
-        --text-main: #111111;
-        --text-soft: #555555;
-        --border-soft: #e5e5e5;
-      }
+    html {
+      scroll-behavior: smooth;
+    }
 
-      * {
-        box-sizing: border-box;
-      }
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
 
-      body {
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-        color: var(--text-main);
-        background-color: #ffffff;
-      }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-      a {
-        text-decoration: none;
-      }
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
 
-      /* ========== NAVBAR ========== */
+    .section-title {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+      font-weight: 600;
+    }
 
-      .navbar {
-        background-color: #222222 !important; /* dark grey bar */
-      }
+    .navbar {
+      background: #222222 !important;
+      padding: 14px 0;
+    }
 
-      .navbar-brand-text {
-        font-weight: 600;
-        font-size: 1.05rem;
-        margin-left: 0.5rem;
-        color: #ffffff;
-      }
+    .navbar-brand {
+      color: #ffffff !important;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
 
-      .nav-avatar {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
+    .nav-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
 
-      .navbar-nav .nav-link {
-        font-size: 0.9rem;
-        text-transform: lowercase;
-        letter-spacing: 0.08em;
-        color: #f5f5f5; /* white text */
-        font-weight: 400; /* normal by default */
-      }
+    .navbar-nav .nav-link {
+      color: #f3f3f3 !important;
+      text-transform: lowercase;
+      letter-spacing: 0.08em;
+      font-size: 0.88rem;
+      margin-left: 10px;
+    }
 
-      .navbar-nav .nav-link.active,
-      .navbar-nav .nav-link:hover {
-        color: #ffffff;
-        font-weight: 600; /* bold on hover/active */
-      }
+    .navbar-nav .nav-link:hover {
+      color: #ffffff !important;
+      font-weight: 600;
+    }
 
-      /* ========== SECTIONS ========== */
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+    }
 
+    .hero-title {
+      font-size: clamp(2.4rem, 6vw, 4.7rem);
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .hero-subtitle {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .hero-text {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+    }
+
+    .btn-custom {
+      border: 1px solid #111111;
+      border-radius: 0;
+      padding: 12px 26px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn-custom:hover {
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px;
+      height: 100%;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.025);
+      transition: 0.2s ease;
+    }
+
+    .card-box:hover {
+      transform: translateY(-4px);
+      border-color: #111111;
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.08);
+    }
+
+    .item-title {
+      font-weight: 800;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .item-meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 1.15rem;
+      margin-bottom: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: var(--muted);
+    }
+
+    .project-group {
+      margin-bottom: 70px;
+    }
+
+    .project-category {
+      display: inline-block;
+      background: #f6f6f6;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 9px 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .project-intro {
+      color: var(--muted);
+      max-width: 850px;
+      margin-bottom: 28px;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 26px;
+      margin-bottom: 22px;
+      background: #ffffff;
+      transition: 0.2s ease;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.025);
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: #111111;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .project-name {
+      font-weight: 850;
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+    }
+
+    .project-tech {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.76rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 14px;
+      color: #111111;
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
+
+    .skill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-chip {
+      border: 1px solid #111111;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 0.86rem;
+      background: #ffffff;
+      transition: 0.2s ease;
+    }
+
+    .skill-chip:hover {
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .contact-link {
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .contact-link span {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: all 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
       section {
-        padding: 4rem 0;
-        border-bottom: 1px solid var(--border-soft);
+        padding: 55px 0;
       }
 
-      .section-title {
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        font-size: 0.9rem;
-        margin-bottom: 1.5rem;
-        color: var(--text-soft);
-      }
-
-      /* ========== HERO ========== */
-
-      .hero-title {
-        font-size: 2.2rem;
-        font-weight: 600;
-        margin-bottom: 0.6rem;
-        white-space: nowrap; /* keep on one line on desktop */
-      }
-
-      .hero-subtitle {
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        font-size: 0.95rem;
-        color: var(--text-soft);
-        margin-bottom: 1.4rem;
-      }
-
-      .hero-text {
-        color: var(--text-soft);
-        line-height: 1.7;
-        font-size: 0.98rem;
-      }
-
-      .hero-buttons .btn {
-        border-radius: 0;
-        padding: 0.75rem 1.8rem;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-      }
-
-      .btn-outline-dark {
-        border-width: 1px;
-      }
-
-      .btn-outline-dark:hover {
-        color: #ffffff;
+      .hero {
+        min-height: auto;
+        padding-top: 50px;
       }
 
       .hero-image {
-        width: 100%;
-        max-width: 420px;
-        border-radius: 4px;
-        object-fit: cover;
+        margin-top: 35px;
       }
+    }
+  </style>
+</head>
 
-      /* ===== HERO ANIMATIONS ===== */
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#top">
+        <img src="formal_pic.jpg" alt="Vaishnavi" class="nav-avatar" />
+        Vaishnavi Bhamare
+      </a>
 
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(18px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+      <button
+        class="navbar-toggler bg-light"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      .animate-on-load {
-        opacity: 0;
-        animation: fadeInUp 0.8s ease-out forwards;
-      }
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">about</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-      .delay-1 {
-        animation-delay: 0.15s;
-      }
-
-      .delay-2 {
-        animation-delay: 0.3s;
-      }
-
-      .delay-3 {
-        animation-delay: 0.45s;
-      }
-
-      /* ===== SCROLL REVEAL ===== */
-
-      .section-reveal {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.6s ease-out;
-      }
-
-      .section-reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* ========== EDUCATION CARDS ========== */
-
-      .education-card {
-        border: 1px solid var(--border-soft);
-        border-radius: 8px;
-        padding: 1.2rem 1.4rem;
-        margin-bottom: 1.2rem;
-        background-color: #ffffff;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
-        transition: all 0.18s ease-out;
-        height: 100%;
-      }
-
-      .education-card:hover {
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-        transform: translateY(-2px);
-        border-color: #111111;
-      }
-
-      .item-title {
-        font-weight: 600;
-      }
-
-      .item-subtitle {
-        font-size: 0.95rem;
-        color: var(--text-soft);
-      }
-
-      .item-date {
-        font-size: 0.85rem;
-        color: var(--text-soft);
-      }
-
-      /* ========== EXPERIENCE CARDS ========== */
-
-      .experience-card {
-        border: 1px solid var(--border-soft);
-        border-radius: 8px;
-        padding: 1.2rem 1.4rem;
-        margin-bottom: 1.2rem;
-        background-color: #ffffff;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
-        transition: all 0.18s ease-out;
-      }
-
-      .experience-card:hover {
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-        transform: translateY(-2px);
-        border-color: #111111; /* same black border as project cards */
-      }
-
-      .experience-card .item-title {
-        margin-bottom: 0.2rem;
-      }
-
-      .experience-card .item-date {
-        margin-bottom: 0.45rem;
-      }
-
-      .item-list {
-        margin-top: 0.1rem;
-        color: var(--text-soft);
-        font-size: 0.95rem;
-        padding-left: 1.1rem;
-      }
-
-      /* ========== PROJECT CARDS ========== */
-
-      .project-card {
-        border: 1px solid var(--border-soft);
-        border-radius: 8px;
-        padding: 1.2rem 1.4rem;
-        margin-bottom: 1.2rem;
-        background-color: #ffffff;
-        transition: all 0.18s ease-out;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
-      }
-
-      .project-card:hover {
-        border-color: #111111;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-        transform: translateY(-3px);
-      }
-
-      .project-name {
-        font-weight: 600;
-        margin-bottom: 0.25rem;
-      }
-
-      .project-tech {
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--text-soft);
-        margin-bottom: 0.4rem;
-      }
-
-      .project-card ul {
-        padding-left: 1.1rem;
-        margin-bottom: 0.4rem;
-        color: var(--text-soft);
-        font-size: 0.95rem;
-      }
-
-      .project-link {
-        font-size: 0.85rem;
-        font-weight: 500;
-        color: #666666; /* light grey for VIEW MY WORK */
-      }
-
-      .project-link span {
-        text-decoration: underline;
-      }
-
-      .project-link:hover {
-        color: #111111;
-      }
-
-      /* ========== SKILL / CERT / INTEREST CARDS ========== */
-
-      .skill-card {
-        border: 1px solid var(--border-soft);
-        border-radius: 8px;
-        padding: 1.5rem;
-        background-color: #ffffff;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
-        height: 100%;
-        transition: all 0.18s ease-out;
-      }
-
-      .skill-card:hover {
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-        transform: translateY(-2px);
-        border-color: #111111;
-      }
-
-      .skill-card-title {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-      }
-
-      .skill-chip-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.6rem;
-      }
-
-      .skill-chip {
-        border: 1px solid #111111;
-        border-radius: 4px;
-        padding: 0.35rem 0.9rem;
-        font-size: 0.85rem;
-        background-color: #ffffff;
-        transition: all 0.18s ease-out;
-      }
-
-      .skill-chip:hover {
-        background-color: #111111;
-        color: #ffffff;
-      }
-
-      /* ========== ARTICLE CARD ========== */
-
-      .article-card {
-        border: 1px solid var(--border-soft);
-        border-radius: 8px;
-        padding: 1.5rem;
-        background-color: #ffffff;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
-        transition: all 0.18s ease-out;
-      }
-
-      .article-card:hover {
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-        transform: translateY(-2px);
-        border-color: #111111;
-      }
-
-      .article-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 0.6rem;
-      }
-
-      .article-desc {
-        font-size: 0.96rem;
-        color: var(--text-soft);
-        line-height: 1.7;
-        margin-bottom: 1rem;
-      }
-
-      .article-meta {
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--text-soft);
-      }
-
-      .article-read a {
-        font-size: 0.9rem;
-        font-weight: 500;
-        color: #666666;
-      }
-
-      .article-read a:hover {
-        color: #111111;
-        text-decoration: underline;
-      }
-
-      /* ========== CONTACT ========== */
-
-      .contact-link {
-        display: block;
-        color: var(--text-soft);
-        font-size: 0.95rem;
-        margin-bottom: 0.3rem;
-      }
-
-      .contact-link span {
-        font-weight: 500;
-        color: var(--text-main);
-      }
-
-      .contact-link a {
-        color: #111111;
-      }
-
-      .contact-link a:hover {
-        text-decoration: underline;
-      }
-
-      @media (max-width: 991.98px) {
-        .hero-title {
-          font-size: 2rem;
-          white-space: normal; /* allow wrap on small screens */
-        }
-
-        section {
-          padding: 3rem 0;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+  <main id="top">
+    <!-- HERO -->
+    <section id="about" class="hero">
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#top">
-          <img
-            src="formal_pic.jpg"
-            alt="Vaishnavi"
-            class="nav-avatar"
-          />
-          <span class="navbar-brand-text">Vaishnavi Bhamare</span>
-        </a>
-        <button
-          class="navbar-toggler text-white"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navMenu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navMenu">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" href="#about">about</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#education">education</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#experience">experience</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#skills">skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">contact</a>
-            </li>
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 reveal">
+            <p class="section-title mb-2">Hello, I'm</p>
+            <h1 class="hero-title">Vaishnavi Bhamare</h1>
+
+            <div class="hero-subtitle">
+              AI Engineer | Data Engineer | M.S. Advanced Data Analytics
+            </div>
+
+            <p class="hero-text">
+              I build production-grade AI applications and scalable data platforms.
+              My work spans LLM applications, multi-agent systems, RAG pipelines,
+              ETL workflows, cloud-native data engineering, FastAPI services,
+              and machine learning infrastructure.
+            </p>
+
+            <a href="#projects" class="btn btn-custom">View Projects</a>
+            <a href="#contact" class="btn btn-custom">Contact Me</a>
+          </div>
+
+          <div class="col-lg-5 text-center reveal">
+            <img src="FORMAL IMAGE.png" alt="Vaishnavi portrait" class="hero-image" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="container">
+        <p class="section-title">education</p>
+
+        <div class="row g-4">
+          <div class="col-md-6 reveal">
+            <div class="card-box">
+              <div class="item-title">University of North Texas</div>
+              <div class="item-meta">M.S. Advanced Data Analytics · GPA 4.0/4.0 · May 2026</div>
+              <p class="mb-0 text-muted">
+                Phi Kappa Phi Academic Excellence Award — Top 10% of Graduate Students.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 reveal">
+            <div class="card-box">
+              <div class="item-title">Veermata Jijabai Technological Institute</div>
+              <div class="item-meta">B.Tech Electrical Engineering · GPA 3.8/4.0 · May 2024</div>
+              <p class="mb-0 text-muted">
+                Strong foundation in engineering, simulation, analytics, and applied machine learning.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="container">
+        <p class="section-title">experience</p>
+
+        <div class="card-box mb-4 reveal">
+          <div class="item-title">AI Research Engineer · University of North Texas</div>
+          <div class="item-meta">Sept 2024 – May 2026 · Texas, United States</div>
+          <ul>
+            <li>Designed 4 AI player personas using Monte Carlo Tree Search, simulating 10,000+ game states for automated playtesting.</li>
+            <li>Built Python data pipelines to process large-scale MCTS outputs, automate feature extraction, statistical analysis, and experiment tracking.</li>
+            <li>Reduced manual testing cycles from weeks to overnight runs and improved research iteration speed by 40%.</li>
+            <li>Co-authored AI product-testing research accepted for publication in JBAM 2026.</li>
+          </ul>
+        </div>
+
+        <div class="card-box mb-4 reveal">
+          <div class="item-title">Data & AI Intern · TATA Power</div>
+          <div class="item-meta">Oct 2023 – July 2024 · Mumbai, India</div>
+          <ul>
+            <li>Built anomaly detection pipelines on transformer telemetry using Isolation Forest, flagging faults 48 hours before manual detection.</li>
+            <li>Processed 50K+ device streams daily using scheduled Python jobs on AWS Lambda.</li>
+            <li>Served XGBoost predictive maintenance classifier through FastAPI with sub-200ms latency.</li>
+            <li>Tracked model variants, hyperparameters, F1, and precision-recall curves using MLflow.</li>
+          </ul>
+        </div>
+
+        <div class="card-box reveal">
+          <div class="item-title">Machine Learning Intern · Center of Excellence Lab, VJTI</div>
+          <div class="item-meta">May 2023 – Jan 2024 · Mumbai, India</div>
+          <ul>
+            <li>Engineered Python data pipelines processing 100K+ power grid simulation records.</li>
+            <li>Automated ingestion, normalization, feature engineering, and train-test preparation, reducing model iteration time by 40%.</li>
+            <li>Built outage prediction models using Random Forest and XGBoost, achieving 92% accuracy across 5+ scenarios.</li>
           </ul>
         </div>
       </div>
-    </nav>
+    </section>
 
-    <!-- HERO / ABOUT -->
-    <main id="top">
-      <section id="about">
-        <div class="container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-              <p class="section-title mb-2 animate-on-load">
-                Hello, I'm
-              </p>
-              <h1 class="hero-title animate-on-load delay-1">
-                Vaishnavi Bhamare
-              </h1>
-              <div class="hero-subtitle mb-3 animate-on-load delay-2">
-                Master's student in Advanced Data Analytics
-              </div>
-              <p class="hero-text mb-4 animate-on-load delay-3">
-                I love using data to solve real-world problems and turn messy
-                data into clear, actionable insights. Skilled in Artificial Intelligence, Machine Learning, Python, SQL, Power BI, I enjoy
-                building ETL pipelines, dashboards, and predictive models that
-                help stakeholders make confident decisions.
-              </p>
-              <div
-                class="hero-buttons d-flex flex-wrap gap-2 animate-on-load delay-3"
-              >
-                <a href="#projects" class="btn btn-outline-dark">
-                  VIEW MY WORK
-                </a>
-                <a href="#contact" class="btn btn-outline-dark">
-                  GET IN TOUCH
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-6 text-center section-reveal">
-              <img
-                src="FORMAL IMAGE.png"
-                alt="Vaishnavi portrait"
-                class="hero-image"
-              />
-            </div>
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <p class="section-title">projects</p>
+
+        <!-- AI PROJECTS -->
+        <div class="project-group reveal">
+          <div class="project-category">AI & Machine Learning Projects</div>
+          <p class="project-intro">
+            Production-focused AI systems involving LLM applications, multi-agent workflows,
+            transformer fine-tuning, explainability, and deployed ML APIs.
+          </p>
+
+          <div class="project-card">
+            <div class="project-name">AdIntel AI – Multi-Agent Marketing Intelligence Platform</div>
+            <div class="project-tech">Python · LangChain · FastAPI · AWS ECS Fargate · MongoDB · Redis Streams · RAGAS</div>
+            <ul>
+              <li>Built a multi-agent RAG platform routing queries across campaign analysis, audience segmentation, and ad copy generation agents.</li>
+              <li>Designed event-driven ingestion using Redis Streams and async workers returning job IDs in under 100ms.</li>
+              <li>Implemented HyDE retrieval, LangSmith tracing, and RAGAS evaluation, achieving faithfulness 0.94 and answer relevancy 0.91.</li>
+            </ul>
+            <a href="https://github.com/vaishnavibhamare-24" target="_blank" class="project-link">View My Work →</a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-name">Support Ticket Classifier – Fine-tuned BERT + DistilBERT</div>
+            <div class="project-tech">PyTorch · Transformers · FastAPI · ONNX · W&B · SHAP</div>
+            <ul>
+              <li>Fine-tuned BERT and DistilBERT on 15,250 labeled support queries across 151 intent classes.</li>
+              <li>Achieved 89.3% accuracy versus an 82.3% TF-IDF baseline, reducing misrouted tickets by 386 daily.</li>
+              <li>Exported models to ONNX INT8 for 3.1× faster inference and 68% model size reduction.</li>
+            </ul>
+            <a href="https://github.com/vaishnavibhamare-24" target="_blank" class="project-link">View My Work →</a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-name">Flight Delay Prediction – DFW Airport</div>
+            <div class="project-tech">XGBoost · FastAPI · MLflow · SHAP · LangChain · Groq · NOAA API</div>
+            <ul>
+              <li>Trained XGBoost on 182,906 DFW flight records, achieving ROC-AUC 0.963 and F1 0.933.</li>
+              <li>Built FastAPI prediction and explainability endpoints using SHAP attribution.</li>
+              <li>Added LangChain + Groq explanations to convert model outputs into plain-English delay reasoning.</li>
+            </ul>
+            <a href="https://github.com/vaishnavibhamare-24" target="_blank" class="project-link">View My Work →</a>
           </div>
         </div>
-      </section>
 
-      <!-- EDUCATION (2 cards) -->
-      <section id="education">
-        <div class="container">
-          <p class="section-title">education</p>
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="education-card section-reveal">
-                <div class="item-title">
-                  University of North Texas, Denton, Texas
-                </div>
-                <div class="item-subtitle">
-                  Master of Science – Advanced Data Analytics · GPA 4.0/4.0
-                </div>
-                <div class="item-date">Expected Graduation: May 2026</div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="education-card section-reveal">
-                <div class="item-title">
-                  Veermata Jijabai Technological Institute (VJTI), Mumbai
-                </div>
-                <div class="item-subtitle">
-                  Bachelor of Technology – Electrical Engineering · GPA 3.8/4.0
-                </div>
-                <div class="item-date">Graduated: May 2024</div>
-              </div>
-            </div>
+        <!-- DATA ENGINEERING PROJECTS -->
+        <div class="project-group reveal">
+          <div class="project-category">Data Engineering Projects</div>
+          <p class="project-intro">
+            Pipeline-driven projects focused on ingestion, transformation, automation,
+            SQL optimization, data quality, and analytics-ready datasets.
+          </p>
+
+          <div class="project-card">
+            <div class="project-name">YouTube Trending Video Analytics Pipeline</div>
+            <div class="project-tech">Python · SQL · Pandas · SQLite · Streamlit</div>
+            <ul>
+              <li>Engineered an ETL pipeline to ingest, clean, and process 37,000+ semi-structured YouTube records.</li>
+              <li>Integrated SQL and Python scripts to automate transformation and category-level analytics.</li>
+              <li>Optimized SQL queries using indexed tables and joins, improving performance by approximately 40%.</li>
+            </ul>
+            <a href="https://github.com/vaishnavibhamare-24/Youtube-Trending-Video-Pipeline" target="_blank" class="project-link">View My Work →</a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-name">Transformer Telemetry Anomaly Detection Pipeline</div>
+            <div class="project-tech">Python · AWS Lambda · Isolation Forest · FastAPI · MLflow</div>
+            <ul>
+              <li>Built scheduled telemetry processing pipeline for 50K+ transformer device streams.</li>
+              <li>Enabled near real-time monitoring and identified early fault signatures up to 48 hours before threshold alerts.</li>
+              <li>Registered predictive maintenance models in MLflow with tracked metrics and model comparison results.</li>
+            </ul>
+            <a href="https://github.com/vaishnavibhamare-24" target="_blank" class="project-link">View My Work →</a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-name">Power Grid Simulation Data Pipeline</div>
+            <div class="project-tech">Python · SQL · ETL · Feature Engineering · XGBoost</div>
+            <ul>
+              <li>Processed 100K+ grid simulation records for downstream outage prediction.</li>
+              <li>Automated ingestion, normalization, feature extraction, and train-test splitting.</li>
+              <li>Reduced model iteration time by 40% and achieved 92% outage prediction accuracy.</li>
+            </ul>
+            <a href="https://github.com/vaishnavibhamare-24" target="_blank" class="project-link">View My Work →</a>
           </div>
         </div>
-      </section>
 
-      <!-- EXPERIENCE -->
-      <section id="experience">
-        <div class="container">
-          <p class="section-title">experience</p>
+        <!-- BI PROJECTS -->
+        <div class="project-group reveal">
+          <div class="project-category">BI & Analytics Projects</div>
+          <p class="project-intro">
+            Dashboarding and business intelligence projects focused on KPI reporting,
+            stakeholder insights, DAX metrics, and interactive decision-support tools.
+          </p>
 
-          <!-- Teaching Assistant -->
-          <div class="experience-card section-reveal">
-            <div class="item-title">
-              Teaching Assistant · University of North Texas
-            </div>
-            <div class="item-date">
-              Oct 2024 – Present · Texas, United States
-            </div>
-            <ul class="item-list">
-              <li>
-                Supporting 60+ students’ class by assisting with instructions,
-                classroom coordination, and weekly course operations.
-              </li>
-              <li>
-                Grading assignments, quizzes, projects and exams using
-                standardized rubrics to ensure accuracy and fairness.
-              </li>
-              <li>
-                Guiding students on assignments, troubleshooting issues and
-                improving hands-on learning.
-              </li>
+          <div class="project-card">
+            <div class="project-name">Blinkit Sales Analysis – Power BI Dashboard</div>
+            <div class="project-tech">Power BI · Excel · DAX · Business Intelligence</div>
+            <ul>
+              <li>Built a Power BI dashboard analyzing 8.5K grocery items across 1.5K outlets.</li>
+              <li>Created DAX KPIs for total sales, average sales, rating, outlet size, and category performance.</li>
+              <li>Visualized sales by outlet type, size, item category, and fat content using dynamic filters.</li>
             </ul>
+            <a href="https://github.com/vaishnavibhamare-24/Blinkit-PowerBI-Dashboard" target="_blank" class="project-link">View My Work →</a>
           </div>
 
-          <!-- Research Assistant -->
-          <div class="experience-card section-reveal">
-            <div class="item-title">
-              Research Assistant · University of North Texas
-            </div>
-            <div class="item-date">Jan 2025 – Present · Texas, USA</div>
-            <ul class="item-list">
-              <li>
-                Developing SQL reports and BI dashboards to support research and
-                operational decisions.
-              </li>
-              <li>
-                Designing data collection and transformation pipelines to
-                improve reporting accuracy and efficiency.
-              </li>
-              <li>
-                Orchestrating Git-based analytics workflows for reproducible
-                models and experiments.
-              </li>
+          <div class="project-card">
+            <div class="project-name">Super Store Sales – Power BI Dashboard</div>
+            <div class="project-tech">Power BI · Excel · DAX · Sales Analytics</div>
+            <ul>
+              <li>Built an interactive dashboard analyzing 10K+ Super Store transactions across U.S. regions.</li>
+              <li>Created DAX KPIs and visuals for sales, profit, category, segment, region, and payment trends.</li>
+              <li>Identified seasonal sales peaks and regional performance patterns for decision-making.</li>
             </ul>
+            <a href="https://github.com/vaishnavibhamare-24/Super-Store-Sales-PowerBI-Dashboard" target="_blank" class="project-link">View My Work →</a>
           </div>
 
-          <!-- TATA Power -->
-          <div class="experience-card section-reveal">
-            <div class="item-title">
-              Data Analytics Intern · TATA Power, Dharavi Receiving Station
-            </div>
-            <div class="item-date">
-              Feb 2024 – Jul 2024 · Mumbai, India
-            </div>
-            <ul class="item-list">
-              <li>
-                Automated Python/SQL data pipelines, improving processing speed
-                by 60% and enabling near real-time transformer monitoring for
-                50K+ devices.
-              </li>
-              <li>
-                Performed anomaly detection and trend analysis on transformer
-                performance and reliability.
-              </li>
-              <li>
-                Proposed automation-focused improvements to reduce manual
-                reporting and error risk.
-              </li>
+          <div class="project-card">
+            <div class="project-name">ATS Resume Keyword Analyzer</div>
+            <div class="project-tech">Python · Streamlit · Regex · NLP · Analytics Dashboard</div>
+            <ul>
+              <li>Built a Streamlit app to evaluate resume and job description alignment using keyword scoring.</li>
+              <li>Implemented regex-based parsing and keyword maps across ML, BI, cloud, analytics, and data engineering.</li>
+              <li>Generated dynamic match scores, improvement suggestions, progress bars, and CSV downloads.</li>
             </ul>
-          </div>
-
-          <!-- VJTI COE Lab -->
-          <div class="experience-card section-reveal">
-            <div class="item-title">
-              Analytics Internship · COE Lab, VJTI
-            </div>
-            <div class="item-date">
-              May 2023 – Jan 2024 · Mumbai, India
-            </div>
-            <ul class="item-list">
-              <li>
-                Implemented SQL/Python ETL pipelines to ingest and transform
-                100K+ grid simulation records, improving data readiness for
-                modeling.
-              </li>
-              <li>
-                Enhanced integration workflows for large-scale power system
-                simulations.
-              </li>
-              <li>
-                Built analytical reports summarizing performance trends across
-                operating scenarios.
-              </li>
-            </ul>
+            <a href="https://github.com/vaishnavibhamare-24/ats-resume-keyword-analyzer" target="_blank" class="project-link">View My Work →</a>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- PROJECTS -->
-      <section id="projects">
-        <div class="container">
-          <p class="section-title">projects</p>
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <p class="section-title">skills</p>
 
-          <!-- YouTube Trending Video Analytics Pipeline -->
-          <div class="project-card section-reveal">
-            <div class="project-name">
-              YouTube Trending Video Analytics Pipeline
-            </div>
-            <div class="project-tech">
-              SQL · Python (Pandas, SQLite) · Streamlit · Matplotlib
-            </div>
-            <ul>
-              <li>
-                Engineered a robust ETL pipeline to ingest, clean, and process
-                37,000+ semi-structured video records from YouTube trending
-                datasets.
-              </li>
-              <li>
-                Integrated SQL with Python scripts to automate data extraction
-                and transformation across multiple categories and time periods.
-              </li>
-              <li>
-                Developed a real-time analytics dashboard using Streamlit to
-                monitor spikes in views, likes, and category trends, reducing
-                manual reporting time by 80%.
-              </li>
-              <li>
-                Optimized SQL queries with indexed tables and efficient joins,
-                improving performance by ~40%.
-              </li>
-            </ul>
-            <a
-              href="https://github.com/vaishnavibhamare-24/Youtube-Trending-Video-Pipeline"
-              target="_blank"
-              class="project-link"
-            >
-              <span>VIEW MY WORK HERE →</span>
-            </a>
-          </div>
-
-          <!-- Flight Pricing Forecast -->
-          <div class="project-card section-reveal">
-            <div class="project-name">
-              Flight Pricing Forecast
-            </div>
-            <div class="project-tech">
-              Python · Random Forest · ANOVA · Seaborn
-            </div>
-            <ul>
-              <li>
-                Cleaned and prepared 10K+ airline pricing records to build a
-                regression pipeline for fare prediction.
-              </li>
-              <li>
-                Applied Random Forest Regressor (R² ≈ 0.82) and ANOVA to explain
-                pricing variance across airlines, holidays, and baggage rules.
-              </li>
-              <li>
-                Suggested pricing segmentation strategies based on customer
-                personas, transferable to domains like cloud or hospital
-                resource allocation.
-              </li>
-            </ul>
-            <a
-              href="https://github.com/vaishnavibhamare-24/flight-price-forecast"
-              target="_blank"
-              class="project-link"
-            >
-              <span>VIEW MY WORK HERE →</span>
-            </a>
-          </div>
-
-          <!-- Car Selling Price Prediction -->
-          <div class="project-card section-reveal">
-            <div class="project-name">
-              Car Selling Price Prediction
-            </div>
-            <div class="project-tech">Python · Scikit-learn</div>
-            <ul>
-              <li>
-                Built a scalable preprocessing pipeline (missing value
-                imputation, one-hot encoding, feature scaling) for 6K+ car
-                listings.
-              </li>
-              <li>
-                Trained Random Forest Regressor with optimized
-                hyperparameters using GridSearchCV.
-              </li>
-              <li>
-                Visualized top predictive features (age, km driven, fuel type),
-                simulating telemetry insights for IoT systems.
-              </li>
-            </ul>
-            <a
-              href="https://github.com/vaishnavibhamare-24/car-price-prediction"
-              target="_blank"
-              class="project-link"
-            >
-              <span>VIEW MY WORK HERE →</span>
-            </a>
-          </div>
-
-          <!-- Car Sales Dashboard -->
-          <div class="project-card section-reveal">
-            <div class="project-name">
-              Car Sales Performance Dashboard
-            </div>
-            <div class="project-tech">Power BI · Excel</div>
-            <ul>
-              <li>
-                Built an interactive dashboard analyzing 1,000+ car sales
-                records by model, segment, and region.
-              </li>
-              <li>
-                Added filters for time, geography, and discounts to help
-                decision-makers explore profitability.
-              </li>
-              <li>
-                Integrated Excel preprocessing with Power BI for a repeatable,
-                refreshable reporting workflow.
-              </li>
-            </ul>
-            <a
-              href="https://github.com/vaishnavibhamare-24/Car-Sales-Dashboard-PowerBI"
-              target="_blank"
-              class="project-link"
-            >
-              <span>VIEW MY WORK HERE →</span>
-            </a>
-          </div>
-
-          <!-- Retail Sales Forecasting -->
-          <div class="project-card section-reveal">
-            <div class="project-name">
-              Retail Sales Forecasting
-            </div>
-            <div class="project-tech">Python · Scikit-learn</div>
-            <ul>
-              <li>
-                Built an end-to-end ML pipeline using 120K+ retail transactions
-                to predict daily sales.
-              </li>
-              <li>
-                Performed cleaning, missing value imputation, outlier checks,
-                and created multiple EDA visualizations.
-              </li>
-              <li>
-                Engineered pricing gaps, inventory indicators, and profitability
-                features.
-              </li>
-              <li>
-                Developed and compared Linear Regression, Random Forest, and
-                Gradient Boosting models; Random Forest achieved R² ≈ 0.998
-                after fixing data leakage.
-              </li>
-              <li>
-                Showed that units ordered and price were the strongest revenue
-                drivers.
-              </li>
-            </ul>
-            <a
-              href="https://github.com/vaishnavibhamare-24/retail-sales-forecast"
-              target="_blank"
-              class="project-link"
-            >
-              <span>VIEW MY WORK HERE →</span>
-            </a>
-          </div>
-
-          <!-- ATS Resume Keyword Analyzer -->
-          <div class="project-card section-reveal">
-            <div class="project-name">
-              ATS Resume Keyword Analyzer
-            </div>
-            <div class="project-tech">Python · Streamlit</div>
-            <ul>
-              <li>
-                Built an interactive Streamlit web app to evaluate resume–JD
-                alignment using keyword scoring.
-              </li>
-              <li>
-                Implemented regex-based parsing and a curated keyword map across
-                ML, BI, Analytics, and Cloud categories.
-              </li>
-              <li>
-                Generated automated improvement suggestions to help users tailor
-                resumes for ATS systems.
-              </li>
-              <li>
-                Designed a clean UI with dynamic match scores, progress bars,
-                and CSV downloads.
-              </li>
-            </ul>
-            <a
-              href="https://github.com/vaishnavibhamare-24/ats-resume-keyword-analyzer"
-              target="_blank"
-              class="project-link"
-            >
-              <span>VIEW MY WORK HERE →</span>
-            </a>
-          </div>
-
-          <!-- Blinkit Sales Analysis -->
-          <div class="project-card section-reveal">
-            <div class="project-name">
-              Blinkit Sales Analysis – Power BI Dashboard
-            </div>
-            <div class="project-tech">Power BI · Excel</div>
-            <ul>
-              <li>
-                Built a Power BI dashboard analyzing 8.5K Blinkit grocery items
-                across 1.5K outlets.
-              </li>
-              <li>
-                Created DAX-based KPIs (Total Sales, Avg Sales, Avg Rating) for
-                data-driven insights.
-              </li>
-              <li>
-                Visualized sales by outlet type, size, and fat content with
-                dynamic filters and trend charts.
-              </li>
-              <li>
-                Found that Tier 3 outlets & low-fat products generated the
-                highest revenue.
-              </li>
-            </ul>
-            <a
-              href="https://github.com/vaishnavibhamare-24/Blinkit-PowerBI-Dashboard"
-              target="_blank"
-              class="project-link"
-            >
-              <span>VIEW MY WORK HERE →</span>
-            </a>
-          </div>
-
-          <!-- Advanced Sonar Signal Classification -->
-          <div class="project-card section-reveal">
-            <div class="project-name">
-              Advanced Sonar Signal Classification System
-            </div>
-            <div class="project-tech">
-              Python · Scikit-learn · PCA · SHAP · XGBoost · Streamlit
-            </div>
-            <ul>
-              <li>
-                Performed EDA on 2,080 sonar signal instances and used PCA for
-                dimensionality reduction to detect underwater mines vs. rocks.
-              </li>
-              <li>
-                Evaluated 5+ classifiers and deployed XGBoost (≈95% accuracy)
-                with SHAP explainability.
-              </li>
-              <li>
-                Deployed via Streamlit for real-time inference with &lt;300ms
-                latency in simulations.
-              </li>
-            </ul>
-            <a
-              href="https://github.com/vaishnavibhamare-24/sonar-signal-classification"
-              target="_blank"
-              class="project-link"
-            >
-              <span>VIEW MY WORK HERE →</span>
-            </a>
-          </div>
-
-          <!-- Super Store Sales -->
-          <div class="project-card section-reveal">
-            <div class="project-name">
-              Super Store Sales – Power BI Dashboard
-            </div>
-            <div class="project-tech">Power BI · Excel</div>
-            <ul>
-              <li>
-                Built a Power BI dashboard analyzing 10K+ Super Store
-                transactions across U.S. regions.
-              </li>
-              <li>
-                Created DAX KPIs and visuals for segment, category, and payment
-                trends.
-              </li>
-              <li>
-                Found that Consumer segment and Office Supplies dominate total
-                sales, with peaks in Nov–Dec.
-              </li>
-            </ul>
-            <a
-              href="https://github.com/vaishnavibhamare-24/Super-Store-Sales-PowerBI-Dashboard"
-              target="_blank"
-              class="project-link"
-            >
-              <span>VIEW MY WORK HERE →</span>
-            </a>
-          </div>
-
-          <!-- Diabetes Project -->
-          <div class="project-card section-reveal">
-            <div class="project-name">
-              Diabetes Risk Prediction System
-            </div>
-            <div class="project-tech">
-              Python · Scikit-learn · Stratified K-Fold
-            </div>
-            <ul>
-              <li>
-                Analyzed 768 patient records and identified key predictors such
-                as glucose and BMI.
-              </li>
-              <li>
-                Built and compared Random Forest, Logistic Regression, and
-                AdaBoost, achieving ROC-AUC of 0.89.
-              </li>
-              <li>
-                Created explainability visualizations suitable for
-                bias-sensitive healthcare environments.
-              </li>
-            </ul>
-            <a
-              href="https://github.com/vaishnavibhamare-24/diabetes-prediction-ml"
-              target="_blank"
-              class="project-link"
-            >
-              <span>VIEW MY WORK HERE →</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- SKILLS / CERTIFICATIONS / INTERESTS / ARTICLES -->
-      <section id="skills">
-        <div class="container section-reveal">
-          <p class="section-title">skills</p>
-
-          <!-- Skill cards row -->
-          <div class="row g-4">
-            <!-- Card 1 -->
-            <div class="col-md-4">
-              <div class="skill-card">
-                <div class="skill-card-title">Programming & Databases</div>
-                <div class="skill-chip-grid">
-                  <span class="skill-chip">Python</span>
-                  <span class="skill-chip">R</span>
-                  <span class="skill-chip">SQL</span>
-                  <span class="skill-chip">MySQL</span>
-                  <span class="skill-chip">PostgreSQL</span>
-                  <span class="skill-chip">MongoDB</span>
-                  <span class="skill-chip">TensorFlow</span>
-                  <span class="skill-chip">PyTorch</span>
-                  <span class="skill-chip">NumPy</span>
-                  <span class="skill-chip">Pandas</span>
-                  <span class="skill-chip">Matplotlib</span>
-                  <span class="skill-chip">Scikit-learn</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="col-md-4">
-              <div class="skill-card">
-                <div class="skill-card-title">
-                  Data Engineering & Analytics
-                </div>
-                <div class="skill-chip-grid">
-                  <span class="skill-chip">ETL Pipelines</span>
-                  <span class="skill-chip">Data Wrangling</span>
-                  <span class="skill-chip">Random Forest</span>
-                  <span class="skill-chip">XGBoost</span>
-                  <span class="skill-chip">Logistic Regression</span>
-                  <span class="skill-chip">Gradient Boosting</span>
-                  <span class="skill-chip">A/B Testing</span>
-                  <span class="skill-chip">Hypothesis Testing</span>
-                  <span class="skill-chip">SHAP</span>
-                  <span class="skill-chip">Time Series</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="col-md-4">
-              <div class="skill-card">
-                <div class="skill-card-title">BI, Cloud & Tools</div>
-                <div class="skill-chip-grid">
-                  <span class="skill-chip">Power BI</span>
-                  <span class="skill-chip">Tableau</span>
-                  <span class="skill-chip">Looker</span>
-                  <span class="skill-chip">Excel (Advanced)</span>
-                  <span class="skill-chip">Streamlit</span>
-                  <span class="skill-chip">Git & GitHub</span>
-                  <span class="skill-chip">GCP</span>
-                  <span class="skill-chip">AWS</span>
-                  <span class="skill-chip">VS Code</span>
-                </div>
+        <div class="row g-4">
+          <div class="col-md-4 reveal">
+            <div class="card-box">
+              <div class="item-title mb-3">Programming & Frameworks</div>
+              <div class="skill-grid">
+                <span class="skill-chip">Python</span>
+                <span class="skill-chip">SQL</span>
+                <span class="skill-chip">PySpark</span>
+                <span class="skill-chip">FastAPI</span>
+                <span class="skill-chip">Pandas</span>
+                <span class="skill-chip">NumPy</span>
+                <span class="skill-chip">LangChain</span>
+                <span class="skill-chip">LangGraph</span>
               </div>
             </div>
           </div>
 
-          <!-- Certifications & Interests row -->
-          <div class="row g-4 mt-3">
-            <!-- Certifications -->
-            <div class="col-md-6">
-              <div class="skill-card">
-                <div class="skill-card-title">Certifications</div>
-                <div class="skill-chip-grid">
-                  <span class="skill-chip">
-                    Google Data Analytics Professional Certificate
-                  </span>
-                  <span class="skill-chip">
-                    IBM Data Analytics Professional Certificate
-                  </span>
-                  <span class="skill-chip">
-                    Microsoft Power BI Certificate
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Interests -->
-            <div class="col-md-6">
-              <div class="skill-card">
-                <div class="skill-card-title">Interests</div>
-                <div class="skill-chip-grid">
-                  <span class="skill-chip">Large-Scale Experimentation</span>
-                  <span class="skill-chip">Product & Growth Analytics</span>
-                  <span class="skill-chip">Recommendation Systems</span>
-                  <span class="skill-chip">Search & Ranking</span>
-                  <span class="skill-chip">LLM-powered Assistants</span>
-                  <span class="skill-chip">Causal Inference</span>
-                  <span class="skill-chip">Data Platform Design</span>
-                  <span class="skill-chip">Real-time Dashboards</span>
-                </div>
+          <div class="col-md-4 reveal">
+            <div class="card-box">
+              <div class="item-title mb-3">Data Engineering</div>
+              <div class="skill-grid">
+                <span class="skill-chip">ETL/ELT</span>
+                <span class="skill-chip">Data Ingestion</span>
+                <span class="skill-chip">Data Modeling</span>
+                <span class="skill-chip">Schema Design</span>
+                <span class="skill-chip">Redis Streams</span>
+                <span class="skill-chip">MongoDB</span>
+                <span class="skill-chip">ChromaDB</span>
+                <span class="skill-chip">Pinecone</span>
               </div>
             </div>
           </div>
 
-
-          <!-- BLOGS & ARTICLES -->
-<section id="articles">
-  <div class="container section-reveal">
-    <p class="section-title">blogs &amp; articles</p>
-
-    <div class="row g-4 mt-1">
-      <div class="col-12">
-        <div class="article-card">
-          <div class="article-title">
-            WHAT A STRATEGY CARD GAME TAUGHT ME ABOUT AI DECISION-MAKING IN 2025
+          <div class="col-md-4 reveal">
+            <div class="card-box">
+              <div class="item-title mb-3">Cloud, AI & MLOps</div>
+              <div class="skill-grid">
+                <span class="skill-chip">AWS ECS</span>
+                <span class="skill-chip">AWS Lambda</span>
+                <span class="skill-chip">AWS S3</span>
+                <span class="skill-chip">Docker</span>
+                <span class="skill-chip">MLflow</span>
+                <span class="skill-chip">LangSmith</span>
+                <span class="skill-chip">RAGAS</span>
+                <span class="skill-chip">W&B</span>
+              </div>
+            </div>
           </div>
-          <div class="article-desc">
-            Most people learn AI by training models and tuning metrics. But those
-            exercises don’t show how AI actually thinks. This semester, during an
-            academic research project, I worked with an AI simulation framework
-            designed to play a strategy card game. 
+
+          <div class="col-md-4 reveal">
+            <div class="card-box">
+              <div class="item-title mb-3">AI & Machine Learning</div>
+              <div class="skill-grid">
+                <span class="skill-chip">LLMs</span>
+                <span class="skill-chip">RAG</span>
+                <span class="skill-chip">Multi-Agent Systems</span>
+                <span class="skill-chip">PyTorch</span>
+                <span class="skill-chip">Transformers</span>
+                <span class="skill-chip">BERT</span>
+                <span class="skill-chip">XGBoost</span>
+                <span class="skill-chip">SHAP</span>
+              </div>
+            </div>
           </div>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="article-meta">MEDIUM ARTICLE</div>
-            <div class="article-read">
-              <a
-                href="https://medium.com/@vaishnavibhamare24"
-                target="_blank"
-                rel="noopener"
-              >
-                READ MORE →
-              </a>
+
+          <div class="col-md-4 reveal">
+            <div class="card-box">
+              <div class="item-title mb-3">BI & Analytics</div>
+              <div class="skill-grid">
+                <span class="skill-chip">Power BI</span>
+                <span class="skill-chip">Tableau</span>
+                <span class="skill-chip">Looker</span>
+                <span class="skill-chip">Excel</span>
+                <span class="skill-chip">DAX</span>
+                <span class="skill-chip">Dashboards</span>
+                <span class="skill-chip">Visualization</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 reveal">
+            <div class="card-box">
+              <div class="item-title mb-3">Certifications</div>
+              <div class="skill-grid">
+                <span class="skill-chip">AWS Cloud Practitioner</span>
+                <span class="skill-chip">AWS Data Analytics Specialty</span>
+                <span class="skill-chip">Google Data Analytics</span>
+                <span class="skill-chip">IBM Data Analytics</span>
+                <span class="skill-chip">Power BI</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
+    <!-- ARTICLES -->
+    <section id="articles">
+      <div class="container">
+        <p class="section-title">blogs & articles</p>
 
-          
+        <div class="card-box reveal">
+          <div class="item-title">
+            What a Strategy Card Game Taught Me About AI Decision-Making in 2025
+          </div>
+          <p class="text-muted">
+            A reflection on using AI simulation, Monte Carlo Tree Search, and automated playtesting
+            to study decision-making and product testing in a real research collaboration.
+          </p>
+          <a href="https://medium.com/@vaishnavibhamare24" target="_blank" class="project-link">
+            Read More →
+          </a>
+        </div>
+      </div>
+    </section>
 
-      <!-- CONTACT -->
-      <section id="contact">
-        <div class="container section-reveal">
-          <p class="section-title">contact</p>
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <p class="section-title">contact</p>
+
+        <div class="card-box reveal">
           <p class="contact-link">
             <span>Email:</span>
-            <a href="mailto:vaishnavibhamare24@gmail.com">
-              vaishnavibhamare24@gmail.com
-            </a>
+            <a href="mailto:vaishnavibhamare24@gmail.com">vaishnavibhamare24@gmail.com</a>
           </p>
+
           <p class="contact-link">
             <span>LinkedIn:</span>
-            <a
-              href="https://www.linkedin.com/in/vaishnavibhamare"
-              target="_blank"
-              >linkedin.com/in/vaishnavibhamare</a
-            >
+            <a href="https://www.linkedin.com/in/vaishnavibhamare" target="_blank">
+              linkedin.com/in/vaishnavibhamare
+            </a>
           </p>
+
           <p class="contact-link">
             <span>GitHub:</span>
-            <a
-              href="https://github.com/vaishnavibhamare-24"
-              target="_blank"
-              >github.com/vaishnavibhamare</a
-            >
+            <a href="https://github.com/vaishnavibhamare-24" target="_blank">
+              github.com/vaishnavibhamare-24
+            </a>
           </p>
-          <p class="contact-link">
-            <span>Handshake:</span>
-            <a
-              href="https://app.joinhandshake.com/profiles/vaishnavibhamare"
-              target="_blank"
-              >handshake.com/vaishnavibhamare</a
-            >
+
+          <p class="contact-link mb-0">
+            <span>Location:</span> Texas, United States · Open to relocation
           </p>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <!-- Bootstrap JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Scroll reveal JS -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const reveals = document.querySelectorAll(".section-reveal");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const reveals = document.querySelectorAll(".reveal");
 
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.15 }
-        );
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
 
-        reveals.forEach((el) => observer.observe(el));
+      reveals.forEach(function (element) {
+        observer.observe(element);
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>
